@@ -1,0 +1,24 @@
+.footer-wrapper {
+  width: 100vw !important;
+  background-color: #9199a1;
+  padding: 20px 0;
+}
+.footer-container {
+  max-width: 1200px;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-container h5 {
+  font-size: 1rem;
+}
+
+.footer-logo {
+  max-width: 120px; /* 根据需要调整 logo 的最大宽度 */
+  height: auto; /* 保持图片比例 */
+  margin-bottom: 10px; /* 添加底部间距 */
+}

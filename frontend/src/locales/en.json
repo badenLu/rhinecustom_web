@@ -1,0 +1,193 @@
+{
+  "homepage": {
+    "slogan": "Your expert in customizing European journeys!",
+    "searchPlaceholder": "Please enter your destination",
+    "searchAlert": "Please enter a destination",
+    "customization": "Customization",
+
+    "bannerCaptions": [
+      "Dolomiten, Italy",
+      "Salzburg, Austria",
+      "Strasbourg, France",
+      "Lungen, Switzerland",
+      "Neuschwanstein Castle, Germany"
+    ],
+
+    "services": [
+      {
+        "title": "Leisure & Family Travel",
+        "description": "Cherish Every Moment – Unforgettable Journeys for You and Your Loved Ones!",
+        "items": [
+          "Classic France/Italy/Swiss",
+          "Mysterious Germany/Austria/Italy",
+          "Romantic Italy/France/Spain",
+          "Enchanting Swiss/Germany/France/Spain"
+        ]
+      },
+      {
+        "title": "Business & Corporate Travel",
+        "description": "Connect, Innovate, Succeed – Business Travel Redefined!",
+        "items": [
+          "Corporate Meetings & Conferences",
+          "Exhibitions & Trade Shows",
+          "Relocation & Business Expansion Travel",
+          "Team-Building & Retreats"
+        ]
+      },
+      {
+        "title": "Educational & Study Tours",
+        "description": "Explore, Learn, Grow – Transforming Journeys into Knowledge!",
+        "items": [
+          "Language Immersion",
+          "Academic Exchange",
+          "Art & Creative Learning",
+          "STEM & Innovation Programs"
+        ]
+      },
+      {
+        "title": "Medical & Wellness Tourism",
+        "description": "Heal, Relax, Rejuvenate – Your Path to Wellness Begins Here!",
+        "items": [
+          "Medical Treatment Tourism",
+          "Wellness Retreats",
+          "Rehabilitation & Recovery Tourism",
+          "Thermal & Spa Tourism"
+        ]
+      }
+    ]
+  },
+
+  "navbar": {
+    "homepage": "Homepage",
+    "destinations": "Destinations",
+    "routes": "Hot Routes",
+    "contact": "Contact us",
+    "aboutUs": "About us",
+
+    "hello": "Hello",
+    "personalData": "Personal Data",
+    "personalActivities": "Personal Activities",
+    "personalComments": "Personal Comments",
+    "logout": "Logout",
+    "login": "Login"
+  },
+
+  "contact": {
+    "formIntro": "Please fill in your travel requirements and submit them. We will contact you as soon as possible!",
+    "titleLabel": "Title:",
+    "titlePlaceholder": "Select title",
+    "titleMr": "Mr.",
+    "titleMs": "Ms.",
+    "titleMx": "Mx.",
+
+    "nameLabel": "Name:",
+    "namePlaceholder": "Enter your name",
+
+    "emailLabel": "Email:",
+    "emailPlaceholder": "Enter your email",
+
+    "travelTypeLabel": "Interested Travel Type:",
+    "destinationLabel": "Destination(s):",
+    "otherDestinationLabel": "Specify Other Destination:",
+    "otherDestinationPlaceholder": "Enter destination",
+
+    "startDateLabel": "Travel Start Date:",
+    "endDateLabel": "Travel End Date:",
+    "numberOfTravelersLabel": "Number of Travelers:",
+    "budgetLabel": "Per Person Budget(RMB) (Excluding Flights):",
+
+    "submitButton": "Submit",
+
+    "submitSuccess": "Submit successfully! After 5 seconds will turn to Homepage!",
+    "submitFail": "Submitted unsuccessfully! Please try it later!",
+
+    "errorTitleRequired": "Please select your gender",
+    "errorNameRequired": "Please enter your name",
+    "errorEmailRequired": "Please enter your email",
+    "errorEmailFormat": "Invalid email format",
+    "errorTravelTypeRequired": "Please select a travel type",
+    "errorDestinationRequired": "Please select at least one destination",
+    "errorStartDateRequired": "Please choose the start time of your trip",
+    "errorEndDateRequired": "Please choose the end time of your trip",
+    "errorNumberRequired": "Please enter the number of travelers",
+    "errorBudgetRequired": "Please enter your budget per person",
+    "travelTypes": [
+      {
+        "value": "Leisure & Family Trip",
+        "label": "Leisure & Family Trip"
+      },
+      {
+        "value": "Business & Corporate Travel",
+        "label": "Business & Corporate Travel"
+      },
+      {
+        "value": "Educational & Study Tours",
+        "label": "Educational & Study Tours"
+      },
+      {
+        "value": "Medical & Wellness Tourism",
+        "label": "Medical & Wellness Tourism"
+      }
+    ],
+    "destinations": [
+      {
+        "value": "Germany",
+        "label": "Germany"
+      },
+      {
+        "value": "France",
+        "label": "France"
+      },
+      {
+        "value": "Switzerland",
+        "label": "Switzerland"
+      },
+      {
+        "value": "Italy",
+        "label": "Italy"
+      },
+      {
+        "value": "Spain",
+        "label": "Spain"
+      },
+      {
+        "value": "Netherlands",
+        "label": "Netherlands"
+      },
+      {
+        "value": "Austria",
+        "label": "Austria"
+      },
+      {
+        "value": "Other",
+        "label": "Other"
+      }
+    ]
+  },
+
+  "about": {
+    "albumTitle": "PhotoAlbum",
+    "brandPhilosophyTitle": "RhineCustom's Brand Philosophy",
+    "founderTitle": "About the Founder Jillian",
+    "brandPhilosophyContent": ["RhineCustom is a company established in 2025, dedicated to providing tailored European trave plans for individuals with diverse needs. Whether it's leisure & family travel, business & corporate travel, educational & stydy Tours, or medical & wellness tourism, RhineCustom is committed to ensuring every client has a perfect travel experience. Unlike ordinary travel agencies, RhineCustom strives to offer the most personalized travel experience, aligning with each client’s expectations and budget.", "We carefully design travel plans based on your preferences and financial considerations, recommending options that fit your unique desires. Additionally, RhineCustom offers the services of professional photographers to capture memorable moments during your trip, ensuring you can preserve the best memories of your European adventure.", "Our goal is to create a travel experience that goes beyond the ordinary, providing every customer with a journey that is as individual as they are."],
+    "founderContent": ["Jillian is an experienced travel enthusiast and landscape photographer. She holds a Master’s degree in Law from China and a Master’s degree in Tourism Management from Europe. Jillian previously worked in legal consulting in China, but due to her passion for travel photography, she moved to Europe to study sustainable tourism development. She also taught herself programming and independently created all the content for the RhineCustom website. All the images on the website are Jillian's original photography works.",
+    "Having lived in Europe for many years, Jillian has an extensive understanding of Europe's natural landscapes, cultural sites, historical architecture, and cuisine. Her greatest ambition is to carefully craft tailored European travel experiences for others, enabling individuals to create the most beautiful travel memories."]
+  },
+
+  "footer": {
+    "quickLinks": "Quick Links",
+    "link1": "Homepage",
+    "link2": "Hot Routes",
+    "link3": "Contact Us",
+    "contactUs": "Contact Us",
+    "email": "Email",
+    "address": "Address",
+    "phone": "Phone",
+    "socialMedia": "Social Media",
+    "Rednote": "Rednote",
+    "Tiktok": "Tiktok",
+    "Wechat-Number": "Wechat Number",
+    "legalTitle": "Legal & Copyright Info",
+    "copyright": "© 2025 Rhine Custom. All rights reserved."
+  }
+}

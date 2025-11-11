@@ -1,0 +1,118 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white !important;
+  padding: 20px;
+  border-radius: 8px !important;
+  width: 550px !important;
+  height: 800px !important;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  font-size: 20px;
+  text-align: left;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px; 
+}
+
+.flex-item {
+  flex: 1;
+  max-width: 200px;
+  min-width: 100px;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-select select {
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+/* 默认向下箭头 */
+.custom-select::after {
+  content: "▼";
+  font-size: 12px;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* 使用 :focus-within 确保 select 选中时箭头变向 */
+.custom-select:focus-within::after {
+  content: "◄"; /* 向左箭头 */
+}
+
+
+.password-input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-toggle-btn {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #aaa;
+  outline: none;
+  padding: 0;
+}
+
+.password-toggle-btn:hover {
+  color: #666;
+}
+
+
+.icon-style {
+  font-size: 15px;
+  color: #ccc;
+}
+
+.password-hint {
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+}
+

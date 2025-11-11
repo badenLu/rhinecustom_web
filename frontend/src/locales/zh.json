@@ -1,0 +1,201 @@
+{
+  "homepage": {
+    "slogan": "您的欧洲旅行定制专家！",
+    "searchPlaceholder": "请输入您的目的地",
+    "searchAlert": "请输入一个目的地",
+    "customization": "开始定制！",
+
+    "bannerCaptions": [
+      "多洛米蒂山脉，意大利",
+      "萨尔茨堡，奥地利",
+      "斯特拉斯堡，法国",
+      "卢塞恩，瑞士",
+      "新天鹅堡，德国"
+    ],
+
+    "services": [
+      {
+        "title": "休闲与家庭旅行",
+        "description": "珍惜每一刻，与家人共度难忘旅程！",
+        "items": [
+          "法意瑞品质游-文艺与山水的巅峰体验",
+          "德奥意深度游：童话森林、湖区秘境与意式浪漫",
+          "意法西南欧深度游-浪漫与艺术的交响",
+          "瑞德法荷-莱茵河精华游"
+        ]
+      },
+      {
+        "title": "商务与公司差旅",
+        "description": "连接、创新、成功——重新定义商务旅行！",
+        "items": [
+          "企业会议与研讨会",
+          "展览与交易会",
+          "企业搬迁与拓展",
+          "团建与休闲"
+        ]
+      },
+      {
+        "title": "教育与游学之旅",
+        "description": "探索、学习、成长——让旅行充满知识与灵感！",
+        "items": [
+          "语言沉浸式游学",
+          "学术交流",
+          "艺术与创意学习",
+          "STEM与创新项目"
+        ]
+      },
+      {
+        "title": "医疗与健康旅游",
+        "description": "疗愈、放松、重生——开启您的健康之旅！",
+        "items": [
+          "医疗旅游",
+          "健康疗养",
+          "康复旅行",
+          "温泉疗养旅行"
+        ]
+      }
+    ]
+  },
+
+  "navbar": {
+    "homepage": "首页",
+    "destinations": "目的地",
+    "routes": "热门路线",
+    "contact": "联系我们",
+    "aboutUs": "关于我们",
+
+    "hello": "您好",
+    "personalData": "个人资料",
+    "personalActivities": "个人活动",
+    "personalComments": "个人评论",
+    "logout": "退出登录",
+    "login": "登录"
+  },
+
+  "contact": {
+    "formIntro": "请填写您的旅行需求并提交，我们会尽快与您联系！",
+    "titleLabel": "称呼：",
+    "titlePlaceholder": "请选择称呼",
+    "titleMr": "先生",
+    "titleMs": "女士",
+    "titleMx": "不愿透露",
+
+    "nameLabel": "姓名：",
+    "namePlaceholder": "请输入您的姓名",
+
+    "emailLabel": "邮箱：",
+    "emailPlaceholder": "请输入您的邮箱",
+
+    "travelTypeLabel": "意向旅行类型：",
+    "destinationLabel": "目的地：",
+    "otherDestinationLabel": "其他目的地：",
+    "otherDestinationPlaceholder": "请输入目的地",
+
+    "startDateLabel": "出发日期：",
+    "endDateLabel": "返回日期：",
+    "numberOfTravelersLabel": "出行人数：",
+    "budgetLabel": "人均预算（不含机票, 人民币）：",
+
+    "submitButton": "提交",
+
+    "submitSuccess": "提交成功！5秒后自动返回首页！",
+    "submitFail": "提交失败！请稍后再试！",
+
+    "errorTitleRequired": "请选择您的称呼",
+    "errorNameRequired": "请输入您的姓名",
+    "errorEmailRequired": "请输入您的邮箱",
+    "errorEmailFormat": "邮箱格式不正确",
+    "errorTravelTypeRequired": "请选择旅行类型",
+    "errorDestinationRequired": "请至少选择一个目的地",
+    "errorStartDateRequired": "请选择出发时间",
+    "errorEndDateRequired": "请选择返回时间",
+    "errorNumberRequired": "请输入出行人数",
+    "errorBudgetRequired": "请输入人均预算",
+    "travelTypes": [
+      {
+        "value": "Leisure & Family Trip",
+        "label": "休闲与家庭旅行"
+      },
+      {
+        "value": "Business & Corporate Travel",
+        "label": "商务与公司差旅"
+      },
+      {
+        "value": "Educational & Study Tours",
+        "label": "教育与游学之旅"
+      },
+      {
+        "value": "Medical & Wellness Tourism",
+        "label": "医疗与健康旅游"
+      }
+    ],
+    "destinations": [
+      {
+        "value": "Germany",
+        "label": "德国"
+      },
+      {
+        "value": "France",
+        "label": "法国"
+      },
+      {
+        "value": "Switzerland",
+        "label": "瑞士"
+      },
+      {
+        "value": "Italy",
+        "label": "意大利"
+      },
+      {
+        "value": "Spain",
+        "label": "西班牙"
+      },
+      {
+        "value": "Netherlands",
+        "label": "荷兰"
+      },
+      {
+        "value": "Austria",
+        "label": "奥地利"
+      },
+      {
+        "value": "Other",
+        "label": "其他"
+      }
+    ]
+    
+  },
+  
+  "about": {
+    "albumTitle": "相册",
+    "brandPhilosophyTitle": "RhineCustom莱茵定制的品牌理念",
+    "founderTitle": "关于创始人Jillian",
+    "brandPhilosophyContent": [
+      "RhineCustom 成立于2025年，致力于为多元化需求的个人及团体提供定制化的欧洲旅行方案。无论是休闲家庭旅行、商务与企业出行、教育与研学旅行，还是医疗与健康旅游，RhineCustom莱茵定制都致力于确保每一位客户都能拥有完美的旅行体验。与普通旅行社不同的是，RhineCustom 努力提供最个性化的旅行服务，以满足每位客户的期望和预算。",
+      "RhineCustom莱茵定制会在充分考虑您的偏好和经济状况的基础上，精心设计旅行方案，推荐最符合您需求的选择。此外，RhineCustom 还提供专业摄影师服务，为您记录旅途中的难忘瞬间，帮助您珍藏在欧洲之旅中的美好回忆。",
+      "我们的目标是为每位客户打造超越平凡的旅行体验，让每一次行程都能与您的独特个性完美契合。"
+    ],
+    "founderContent": [
+      "创始人Jillian 是一位经验丰富的旅行爱好者和风光摄影师，拥有中国的法律硕士学位及欧洲的旅游管理硕士学位。她曾在国内从事法律咨询工作，但因对旅行摄影的热爱而前往欧洲深入学习可持续旅游发展。她自学了编程并独立完成了 RhineCustom 网站上的所有内容，网站中的照片皆为她的原创摄影作品。",
+      "在欧洲生活多年的经历让 Jillian 对欧洲的自然风光、文化遗产、历史建筑以及美食有了深刻了解。她最大的愿望是为他人精心定制欧洲旅行，让每个人都能收获最难忘的旅途回忆。"
+    ]
+  },
+
+  "footer": {
+    "quickLinks": "快速链接",
+    "link1": "首页",
+    "link2": "热门路线",
+    "link3": "联系我们",
+    "contactUs": "联系方式",
+    "email": "邮箱",
+    "address": "地址",
+    "phone": "电话",
+    "socialMedia": "社交媒体",
+    "Rednote": "小红书",
+    "Tiktok": "抖音",
+    "Wechat-Number": "微信号",
+    "legalTitle": "法律与版权信息",
+    "copyright": "© 2025 RhineCustom 版权所有"
+  }
+
+}

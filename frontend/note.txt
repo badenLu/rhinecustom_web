@@ -1,0 +1,268 @@
+**************************总体前期思路*************************************
+
+1.先设置一个外部的文件夹名叫rhineCustom, 打开文件夹进入终端后，npx create-react-app my-app
+2.根据UI设计确定my-app的基本结构
+my-app/
+├── public/                     # 公共静态文件（如 HTML 模板）
+│   ├── index.html              # 主 HTML 文件
+│   ├── favicon.ico             # 网站图标
+│   └── banner.jpg              # 背景横幅图片（可选）
+├── src/                        # 核心代码目录
+│   ├── components/             # 可复用组件
+│   │   ├── Navbar.js           # 导航栏组件
+│   │   ├── Footer.js           # 页脚组件
+│   ├── pages/                  # 独立页面组件
+│   │   ├── Home.js             # 首页
+│   │   ├── Destinations.js     # 目的地页面
+│   │   ├── CustomTours.js      # 定制旅行页面
+│   │   ├── About.js            # 关于我们页面
+│   │   ├── Login.js            # 登录页面
+│   ├── assets/                 # 静态资源
+│   │   ├── banner.jpg          # 首页横幅图片
+│   │   ├── logo.png            # 网站 Logo
+│   ├── App.js                  # 应用的主入口组件
+│   ├── index.js                # React 的渲染入口
+│   ├── styles.css              # 全局样式文件
+├── package.json                # 项目配置文件
+└── tailwind.config.js          # TailwindCSS 配置文件
+
+3.public/index.html
+这是 React 应用的基础 HTML 文件，它为应用提供挂载点。
+<div id="root"></div> <!-- React 的应用挂载点 -->
+
+4.src/index.js
+这是 React 应用的入口文件，负责将 React 组件渲染到 public/index.html 的 #root 元素上
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App"; // 导入 App 组件
+import "./styles.css"; // 导入全局样式文件（如果有）
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+5.src/App.js
+这是React应用的根组件，负责组合和渲染页面内容。
+import React from "react";
+
+function App() {
+  return (
+    <div>
+      <h1>Welcome to Rhine Custom</h1>
+    </div>
+  );
+}
+
+export default App;
+
+6.在App.js中引入src/pages中的各页面组件和src/components中的各复用部分,记住上面import了什么，下面就要return出来
+
+7.为了便于响应式开发，安装bootstrap
+（1）npm install bootstrap
+（2）在src/index.js中引入Bootstrap的CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+
+**********************************Navbar.js***************************************************
+1.Navbar.js 和Navbar.css在同一文件夹
+2.从App.js中import 和 return Navbar
+3.在Navbar.js中也要import react, 导出Navbar这个组件
+4.想要汉堡按钮打开有导航栏，
+***Navbar.js：
+ const [isOpen, setIsOpen] = useState(false);
+ onClick={() => setIsOpen(!isOpen)}
+ <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
+***Navbar.css:
+.navbar-collapse.show {
+  display: block !important;
+}
+
+
+
+
+
+*********************************************Homepage.js*******************************************
+1.从开始制作各个页面开始，要对多页面进行路由的配置
+安装react-router-dom: npm install react-router-dom, 安装成功后需要重新启动开发服务器
+2.App.js里面现在应该写成
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Homepage from './pages/Homepage';
+
+function App() {
+  return (
+    <Router>
+        <Navbar />
+        {/* 页面内容 */}
+        <Routes>
+            <Route path="/" element={<Homepage />} />
+        </Routes>
+    </Router>
+      
+  );
+}
+
+export default App;
+
+3. npm install react-bootstrap bootstrap
+react-bootstrap 是 Bootstrap 在 React 中的官方封装组件库，它允许你用 React 组件的方式使用 Bootstrap，而不需要手写类名。
+同时，它还安装了 bootstrap（CSS 样式），所以它 包含了 npm install bootstrap 的内容，不需要额外再安装 bootstrap。
+( 如果你是在 React 项目 里开发，使用 react-bootstrap 更加方便，特别是 轮播图 (Carousel)、模态框 (Modal)、按钮 (Button) 等组件。
+但如果你只是想使用 Bootstrap 的 CSS 样式，不打算用 Bootstrap 组件，可以 仅安装 bootstrap。)
+
+4.import { Carousel } from "react-bootstrap"; // 使用 React-Bootstrap 轮播图
+import { useNavigate } from "react-router-dom";//使用 useNavigate 来实现页面跳转
+
+
+****************************************Login.js*********************************************
+如果想让 Login 页面 保持在其他页面上，你可以在当前页面以 模态框 (Modal) 的形式显示登录界面，而不是跳转到一个单独的页面。
+将 Login 页面作为一个 模态框组件，并通过 props 控制它的显示和关闭。根据当前的文件结构，由于Navbar是直接在App.js中引入的，
+而不是Homepage的一部分，这时候我们想要实现点击Navbar上面的Login按钮，实现在任何当前页面上
+显示模态框的功能，解决方案为：
+1.将模态框状态提升到 App.js，使 App.js 管理模态框的显示与隐藏。
+2.将模态框直接放在 App.js 中，这样它可以覆盖所有页面内容（包括 Homepage）。
+3.通过 props 将控制模态框的函数（如 openLoginModal）传递给 Navbar。
+
+具体操作如下：
+App.js:
+import LoginModal from "./components/LoginModal";
+const [isLoginOpen, setIsLoginOpen] = useState(false); // 管理模态框状态
+const openLoginModal = () => setIsLoginOpen(true); // 打开模态框
+const closeLoginModal = () => setIsLoginOpen(false); // 关闭模态框
+
+ <Navbar onLoginClick={openLoginModal} /> {/* 传递控制函数给 Navbar */}
+ <LoginModal isOpen={isLoginOpen} onClose={closeLoginModal} /> {/* 登录模态框 */}
+
+
+****************************************LoginModal.js/RegisterModal.js*********************************************
+需要引入FontAwesome中的icon：
+npm install --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
+@fortawesome/react-fontawesome是 FontAwesome 提供的专门用于 React 项目的工具包。它提供了一个 React 组件（<FontAwesomeIcon />），
+可以轻松在 React 应用中使用 FontAwesome 图标。让你通过 React 的方式直接渲染图标，而不需要用传统的 <i> 标签或手动引入 CSS 文件。
+@fortawesome/free-solid-svg-icons
+用途：FontAwesome 的图标被分为多个类别（比如免费和付费），free-solid-svg-icons 包含了常用的免费实心图标，例如 faEye 和 faEyeSlash。
+功能：这是实际的图标资源包，你需要从中引入特定的图标到项目中。
+
+********************************************开始后端的开发*****************************************************
+✅ React 前端：负责 UI 和 API 请求
+✅ Laravel 后端：处理 API 逻辑 & 存储数据
+✅ CORS 让前端可以访问后端
+✅ Token 认证保护 API
+
+1.安装PHP，Composer, Laravel
+安装PHP：推荐安装XAMPP(自带PHP和MySQL)
+安装Composer: Composer 是 PHP 的包管理工具，Laravel 依赖它来管理依赖包。(在网站下载)
+安装Laravel: composer global require laravel/installer
+
+2.创建laravel项目
+需要将这个文件放到xampp/htdocs下，
+进入D:\xampp\htdocs， 打开终端，输入 composer create-project laravel/laravel RhineCustom
+现在后端的Laravel文件路径为：D:\xampp\htdocs\RhineCustom
+进入这个路径的正确方法：cd /d D:\xampp\htdocs\RhineCustom(因为默认是在磁盘C里面)
+
+3.配置laravel里面的.env文件
+修改为：
+APP_URL=http://localhost/RhineCustom/public
+
+生成应用密钥：
+php artisan key:generate
+
+4.配置数据库
+（1）启动 XAMPP，开启 Apache 和 MySQL
+（2）创建数据库
+打开浏览器，访问 http://localhost/phpmyadmin
+创建一个新数据库，名字比如 rhinecustom_db
+（3）修改.env文件
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=rhinecustom_db
+DB_USERNAME=root
+DB_PASSWORD=
+（4）运行数据库迁移（创建表）
+php artisan migrate
+在 Laravel 项目的根目录（D:\xampp\htdocs\RhineCustom）下运行
+
+接下来就需要做的是：
+创建 API 让前端可以注册和登录用户（AuthController）
+让 React 通过 API 访问 Laravel
+测试 API 是否能正常工作
+配置 CORS 让 React 访问 Laravel
+开发更多 API（用户信息、订单等）
+
+
+*********************************Laravel： 创建 AuthController 处理注册 & 登录*********************************************
+大体思路：
+用户注册 (register)：接受 name、email 和 password，创建用户并返回带有 token 的响应。
+用户登录 (login)：检查 email 和 password，如果正确，返回 token。
+用户退出 (logout)：撤销 token，确保用户安全退出。
+
+1.php artisan make:controller AuthController 添加内容
+2.更新users 数据表结构（添加 title、first_name、last_name 字段）php artisan make:migration add_user_details_to_users_table --table=users
+3.更新user.php模型，让Laravel允许存储title,first_name, last_name
+4.确保数据库迁移成功：php artisan migrate
+5.更新 register() 方法，增加字段验证
+6.api.php文件的内容需要休假，增加register和login的接口
+7.在前端添加API请求逻辑： 在LoginModal.js中处理/api/login请求，RegisterModal.js中处理/api/register请求
+8.允许前端访问后端API，由于React 前端运行在不同的端口（例如 3000），Laravel 默认可能会阻止跨域请求（CORS）：
+（1）安装Laravel CORS依赖：composer require fruitcake/laravel-cors
+（2）修改 config/cors.php： 'allowed_origins' => ['http://localhost:3000']
+9.api.php中添加：use App\Http\Controllers\AuthController;
+10.确保Laravel Sanctum令牌正确生成，Sanctum 是 Laravel 提供的 API 认证方案，适用于前端（React/Vue）+ Laravel 的项目。
+Sanctum 主要用于 用户身份认证，保证 API 安全：前端 React 发送请求到 Laravel API；Sanctum 负责认证（检查用户是否登录）；只有认证成功的用户才能访问 API
+
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+php artisan migrate
+
+***************************************About页面做灯箱lightbox*****************************************
+1.安装所需依赖 在你的 React 项目中安装 react-photo-album 和 yet-another-react-lightbox
+npm install react-photo-album yet-another-react-lightbox
+RowsPhotoAlbum是展示全部缩略图，Lightbox是展示所有的大图，再加上后面的Div,相当于有三个根组件了，所以
+必须在外面加个<></>将它们包裹起来当成整体
+
+
+*****************************制作DestinationDetail 页面***********************
+前端：
+(1)Destination.js: import { useNavigate } from 'react-router-dom';
+(2)App.js: import RouteDetailPage from './pages/RouteDetailPage';
+          <Route path="/destinations/:id" element={<DestinationDetail />} />
+后端：
+（1）api.php：Route::get('/destinations/{id}', [DestinationController::class, 'show']);
+(2) DestinationController: 
+    public function show($id) {
+        $destination = Destination::findOrFail($id);
+        return response()->json($destination);
+    }
+
+
+***************************配置中英文双语页面**********************************
+前端React:
+1.配置i18n.js: npm install i18next react-i18next
+2.增加i18n.js的文件， 还有locales(en.json/zh.json)文件，添加内容
+3.以增添Homepage页面的双语为例，HomePage.js需要添加：
+import { useTranslation } from "react-i18next";
+const { t, i18n } = useTranslation();
+ 举例：<h1 className="slogan">{t('slogan')}</h1>
+4.语言切换按钮需要再Navbar里面改成：
+const [language, setLanguage] = useState('en');
+改为：
+const { i18n } = useTranslation();
+const language = i18n.language;
+
+函数内容改为：
+const handleLanguageChange = (lang) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem('lang', lang); // 可选：保持语言选择
+    setIsLangMenuOpen(false); 
+};
+
+
+5.index.js中引入：
+import './i18n';

@@ -1,0 +1,55 @@
+.carousel-container {
+  position: relative;
+  width: 300px; /* 您可以根据需要改为100%或别的固定值 */
+  overflow: hidden;
+}
+
+.carousel-image-wrapper {
+  position: relative;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 18px;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.carousel-dots {
+  position:absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}

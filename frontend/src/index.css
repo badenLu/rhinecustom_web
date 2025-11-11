@@ -1,0 +1,113 @@
+/* 全局布局样式 */
+.container-fluid {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* 设置页面背景和全局文本 */
+body {
+  background-color: white;
+  color: #333;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* 禁止页面水平滚动 */
+}
+
+:root {
+  --theme-color: #58A935; /* 定义主题颜色 */
+  --theme-color-hover: #469028; /* 按钮悬停时的颜色 */
+  --button-text-color: white; /* 按钮文本颜色 */
+}
+
+button {
+  background-color: var(--theme-color);
+  color: var(--button-text-color);
+  padding: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px !important;
+}
+
+button:hover {
+  background-color: var(--theme-color-hover);
+  color: var(--button-text-color);
+}
+
+button.btn-link {
+  background: none;
+  color: var(--theme-color);
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+button.btn-link:hover {
+  color: var(--theme-color-hover);
+  text-decoration: underline;
+}
+
+button.close-btn {
+  color:#333;
+  background-color: transparent;
+}
+
+button.close-btn:hover {
+  color: #ccc;
+  background-color: transparent;
+}
+
+@font-face {
+  font-family: 'Oleo Script'; 
+  src: url('./assets/fonts/OleoScript-Regular.ttf') format('truetype'); /* 本地路径 */
+  font-weight: normal; 
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: 'Oleo Script'; 
+  src: url('./assets/fonts/OleoScript-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* 移除 Bootstrap 的响应式 .container 限制 */
+@media (max-width: 576px) {
+  .container-fluid {
+    max-width: 576px;       /* 屏幕宽度 >=576px 时，固定宽度为 540px */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 758px;       /* 屏幕宽度 >=768px 时，固定宽度为 720px */
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 982px;       /* 屏幕宽度 >=992px 时，固定宽度为 960px */
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1190px;      /* 屏幕宽度 >=1200px 时，固定宽度为 1140px */
+  }
+}

@@ -1,0 +1,190 @@
+.navbar {
+  position: fixed;  /* 固定在顶部 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000; 
+
+  max-width: 1160px;
+  padding:0;
+  margin: 0 auto;
+}
+
+.navbar .container-fluid {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  margin: 0;
+  padding: 0 10px;
+}
+
+/* Logo 容器 */
+.logo-container {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+}
+
+/* Logo 图片 */
+.logo-img {
+  width: 70px; 
+  height: 70px;
+  border-radius: 50%; 
+  padding: 5px; 
+}
+
+/* 公司名称 */
+.company-name {
+  font-family: 'Oleo Script', cursive;
+  font-size: 2rem; 
+  font-weight: bold;
+  color: #000; 
+  letter-spacing: 1px; 
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  font-weight:bold;;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.navbar-nav .nav-item:hover {
+  background-color: rgba(0, 255, 0, 0.1); 
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item .nav-link.active {
+  border-bottom: 3px solid var(--theme-color);
+  color: var(--theme-color);
+}
+
+.user-menu-container {
+  cursor: pointer;
+  position: relative; 
+}
+
+.user-dropdown-menu {
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 6px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.dropdown-header {
+  background-color: var(--theme-color); /* 主题色 */
+  height: 40px;
+  padding: 10px 15px; /* 适当增加 padding */
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+}
+.dropdown-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.user-name-link {
+  text-decoration: none;
+}
+.user-name {
+  font-weight: bold;
+  margin-bottom: 0;
+  color: var(--theme-color);
+}
+
+.user-name:hover {
+  text-decoration: underline;
+}
+
+.user-email {
+  font-size: 0.8rem;
+  color:rgba(72, 67, 67, 0.8); 
+}
+
+.dropdown-body{
+  margin-top: 90px;
+}
+
+.dropdown-body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-body li {
+  border-top: 1px solid var(--theme-color-hover);
+}
+
+.dropdown-body a,
+.dropdown-body button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown-body a {
+  text-align: left;
+  background: none;
+}
+
+
+.dropdown-body a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-footer button {
+  text-align: center;
+  background: var(--theme-color);
+  color: white;
+  border-radius: 0 0 6px 6px;
+}
+
+.dropdown-footer button:hover {
+  background: var(--theme-color-hover);
+}
+
+.language-selector-container {
+  position: relative; 
+  cursor: pointer;
+}
+
+.language-display {
+  padding: 0.4rem 0.6rem; 
+  border-radius: 4px;
+}
+
+.language-dropdown-menu {
+  position: absolute;
+  top: 2.5rem; 
+  right: 0;   
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 120px;
+  z-index: 999; 
+}
+
+.language-dropdown-menu .dropdown-item {
+  padding: 0.2rem;
+  transition: background-color 0.2s;
+}
+
+.language-dropdown-menu .dropdown-item:hover {
+  background-color: #f2f2f2;
+}
