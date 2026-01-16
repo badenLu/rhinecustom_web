@@ -41,6 +41,17 @@
   border-radius: 20px;
   overflow: hidden;
   z-index: 10;
+  pointer-events: none;
+}
+
+.banner-overlay * {
+  pointer-events: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 20 !important;
+  pointer-events: auto !important;
 }
 
 .slogan {
@@ -193,11 +204,11 @@
 }
 
 .left-arrow {
-  left: 0px;
+  left: 0;
 }
 
 .right-arrow {
-  right: 0px; 
+  right: 0;
   
 }
 

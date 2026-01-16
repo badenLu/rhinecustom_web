@@ -1,24 +1,87 @@
+/* Footer Wrapper 样式 */
 .footer-wrapper {
-  width: 100vw !important;
-  background-color: #9199a1;
-  padding: 20px 0;
-}
-.footer-container {
-  max-width: 1200px;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  width: 100%;
+  background-color: #9199a1; /* 背景色 */
+  padding: 40px 0; /* 上下 padding */
 }
 
-.footer-container h5 {
-  font-size: 1rem;
+/* Footer Container 样式：居中且限定宽度 */
+.footer-container {
+  max-width: 1200px; /* 限定最大宽度 */
+  margin: 0 auto; /* 居中对齐 */
+  color: white; /* 文字颜色 */
+}
+
+/* 主要信息列 */
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+/* 每一列内容 */
+.footer-col {
+  flex: 1;
+  text-align: left;
+}
+
+/* 主标题样式（例如 Quick Links / Contact） */
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: bold; /* 标题加粗 */
+  margin-bottom: 12px; /* 标题底部间距 */
+}
+
+/* 副标题样式 */
+.footer-subtitle {
+  font-size: 0.9rem; /* 副标题字体大小 */
+  font-weight: normal; /* 副标题不加粗 */
+  margin-bottom: 6px; /* 副标题底部间距 */
+  text-align: center; /* Legal 信息居中 */
+}
+
+/* 链接样式 */
+.footer-col a {
+  color: white; /* 链接颜色 */
+  text-decoration: none; /* 去除下划线 */
+  display: block;
+  margin-bottom: 6px; /* 每个链接间距 */
+}
+
+.footer-col p {
+  font-size: 0.9rem;  /* 将字体大小设置为 0.8rem */
+  font-weight: normal; /* 确保不加粗 */
+  margin-bottom: 6px;  /* 设置段落间距 */
+}
+
+/* 底部 Legal 信息部分 */
+.footer-legal {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  align-items: center; /* 居中对齐 */
 }
 
 .footer-logo {
-  max-width: 120px; /* 根据需要调整 logo 的最大宽度 */
-  height: auto; /* 保持图片比例 */
-  margin-bottom: 10px; /* 添加底部间距 */
+  max-width: 120px; /* logo 最大宽度 */
+  margin-bottom: 10px; /* logo 底部间距 */
+}
+
+.footer-link {
+  font-size: 0.9rem;  /* 设置字体大小为 0.8rem */
+  text-decoration: none; /* 确保没有下划线 */
+  color: white; /* 设置链接颜色为白色 */
+  display: block; /* 使其变为块级元素 */
+  margin-bottom: 6px;  /* 每个链接之间的间距 */
+}
+
+.footer-link:hover {
+  color: #1fb81a; /* 改变链接颜色为浅蓝色 */
+  text-decoration: underline; /* 添加下划线效果 */
+}
+
+.social-icon {
+  margin-right: 8px;
+  vertical-align: middle;
+  font-size: 1.5em;
 }
