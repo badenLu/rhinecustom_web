@@ -206,5 +206,18 @@
     "culture": "Culture",
     "nature": "Nature",
     "gastronomy": "Gastronomy"
+  },
+  "destinations_details_subtitle": {
+    "attractions": "Attraction",
+    "travelTips": "Travel Tips",
+    "seasonDetails": "Season Details",
+    "transportation": "Transportation",
+    "localCuisine": "Local Cuisine",
+    "additionalTips":"Additional Tips"
+  },
+
+  "general-strings": {
+    "bestSeason": "Best Season",
+    "findMore": "Find More"
   }
 }

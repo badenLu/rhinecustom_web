@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import "./DestinationDetail.css";
+import {useTranslation} from "react-i18next";
+import i18n from "i18next";
 
 const DestinationDetail = () => {
   const { id } = useParams();
@@ -8,23 +10,25 @@ const DestinationDetail = () => {
   const [attractions, setAttractions] = useState([]);
   const [travelTips, setTravelTips] = useState({});
   const [activeTipCategory, setActiveTipCategory] = useState('seasonDetails');
+  const lang = i18n.language;
+  const {t} = useTranslation();
 
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/destinations/${id}`)
       .then(res => res.json())
       .then(data => {
         setDestination(data);
-        if (data.attractions) {
+        if (data[`attractions_${lang}`]) {
           try {
-            const parsed = JSON.parse(data.attractions);
+            const parsed = JSON.parse(data[`attractions_${lang}`]);
             setAttractions(parsed);
           } catch (e) {
             console.error("Error parsing attractions", e);
           }
         }
-        if (data.travelTips) {
+        if (data[`travelTips_${lang}`]) {
           try {
-            const parsed = JSON.parse(data.travelTips);
+            const parsed = JSON.parse(data[`travelTips_${lang}`]);
             setTravelTips(parsed);
           } catch (e) {
             console.error("Error parsing travelTips", e);
@@ -52,7 +56,7 @@ const DestinationDetail = () => {
         return (
           <div>
             {bestSeason && (
-              <p><strong>Best Season:</strong> {bestSeason}</p>
+              <p><strong>{t('general-strings.bestSeason')}:</strong> {bestSeason}</p>
             )}
             {seasonDetails ? (
               <ul>
@@ -101,9 +105,9 @@ const DestinationDetail = () => {
         >
           <div className="header-overlay">
             <h1 className="detail-title">
-              {destination.city}, {destination.country}
+              {destination[`city_${lang}`]}, {destination[`country_${lang}`]}
             </h1>
-            <p className="overview-text">{destination.overview}</p>
+            <p className="overview-text">{destination[`overview_${lang}`]}</p>
           </div>
         </div>
       </div>
@@ -111,7 +115,7 @@ const DestinationDetail = () => {
       {/* Attractions Card */}
       <div className="card-container attractions-card">
         <div className="card-head">
-          <h2>Attractions</h2>
+          <h2>{t('destinations_details_subtitle.attractions')}</h2>
         </div>
         <div className="card-body">
           {attractions.length > 0 ? (
@@ -130,7 +134,7 @@ const DestinationDetail = () => {
 
       <div className="card-container travel-tips-card">
         <div className="card-head">
-          <h2>Travel Tips</h2>
+          <h2>{t('destinations_details_subtitle.travelTips')}</h2>
         </div>    
         <div className="card-body">
           <div className="tips-wrapper">
@@ -141,25 +145,25 @@ const DestinationDetail = () => {
                   className={activeTipCategory === 'seasonDetails' ? 'active' : ''}
                   onClick={() => setActiveTipCategory('seasonDetails')}
                 >
-                  Season Details
+                  {t('destinations_details_subtitle.seasonDetails')}
                 </li>
                 <li
                   className={activeTipCategory === 'transportation' ? 'active' : ''}
                   onClick={() => setActiveTipCategory('transportation')}
                 >
-                  Transportation
+                  {t('destinations_details_subtitle.transportation')}
                 </li>
                 <li
                   className={activeTipCategory === 'localCuisine' ? 'active' : ''}
                   onClick={() => setActiveTipCategory('localCuisine')}
                 >
-                  Local Cuisine
+                  {t('destinations_details_subtitle.localCuisine')}
                 </li>
                 <li
                   className={activeTipCategory === 'additionalTips' ? 'active' : ''}
                   onClick={() => setActiveTipCategory('additionalTips')}
                 >
-                  Additional Tips
+                  {t('destinations_details_subtitle.additionalTips')}
                 </li>
               </ul>
             </div>

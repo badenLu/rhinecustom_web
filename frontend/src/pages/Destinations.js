@@ -120,9 +120,8 @@ const Destinations = () => {
                   navigate(`/destinations/${destination.id}`)
                 }}
             >
-            Find More
+                {t('general-strings.findMore')}
             </button>
-            
           </div>
         ))}
       </div>

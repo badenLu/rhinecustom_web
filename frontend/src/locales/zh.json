@@ -213,5 +213,19 @@
     "culture": "文化之旅",
     "nature": "自然探索",
     "gastronomy": "美食发现"
+  },
+
+  "destinations_details_subtitle": {
+    "attractions": "风景名胜",
+    "travelTips": "旅行建议",
+    "seasonDetails": "旅行推荐时间",
+    "transportation": "交通方式",
+    "localCuisine": "特色美食",
+    "additionalTips":"其他建议"
+  },
+
+  "general-strings": {
+    "bestSeason": "最佳季节",
+    "findMore": "更多"
   }
 }
