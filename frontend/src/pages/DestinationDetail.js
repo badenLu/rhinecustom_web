@@ -21,7 +21,7 @@ const DestinationDetail = () => {
           } catch (e) {
             console.error("Error parsing attractions", e);
           }
-        };
+        }
         if (data.travelTips) {
           try {
             const parsed = JSON.parse(data.travelTips);
@@ -29,7 +29,7 @@ const DestinationDetail = () => {
           } catch (e) {
             console.error("Error parsing travelTips", e);
           }
-        };
+        }
       })
       .catch(err => console.error(err));
   }, [id]);

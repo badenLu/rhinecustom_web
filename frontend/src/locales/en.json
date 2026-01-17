@@ -189,5 +189,22 @@
     "wechat": "rhinecustom",
     "legalTitle": "Legal & Copyright Info",
     "copyright": "© 2025 Rhine Custom. All rights reserved."
+  },
+
+  "route-tab-section-title": {
+    "overview": "Overview",
+    "itinerary": "Itinerary",
+    "reviews": "Reviews"
+  },
+
+  "destinations_filter-title": {
+    "popularity": "Popularity",
+    "category": "Category"
+  },
+
+  "destinations_filter-subtitle": {
+    "culture": "Culture",
+    "nature": "Nature",
+    "gastronomy": "Gastronomy"
   }
 }

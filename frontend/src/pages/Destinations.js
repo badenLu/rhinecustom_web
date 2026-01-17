@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Destinations.css";
 import { useNavigate } from 'react-router-dom';
+import {useTranslation} from "react-i18next";
+import i18n from "i18next";
 
 const Destinations = () => {
   const [destinations, setDestinations] = useState([]);
@@ -9,6 +11,8 @@ const Destinations = () => {
   const [showCategories, setShowCategories] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("culture");
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  const lang = i18n.language;
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/destinations")
@@ -44,7 +48,7 @@ const Destinations = () => {
             setShowCategories(false);
           }}
           >
-            Popularity
+            {t("destinations_filter-title.popularity")}
           </span>
           <span
             className={filter === "category" ? "active" : ""}
@@ -54,7 +58,7 @@ const Destinations = () => {
               setShowCategories(true);
             }}
           >
-            Category
+            {t("destinations_filter-title.category")}
           </span>
         </div>
 
@@ -74,7 +78,11 @@ const Destinations = () => {
       
       {showCategories && filter === "category" && (
           <div className="category-options">
-            { ["Culture", "Nature","Gastronomy"].map((cat) => (
+            { [
+                t("destinations_filter-subtitle.culture"),
+                t("destinations_filter-subtitle.nature"),
+                t("destinations_filter-subtitle.gastronomy")
+            ].map((cat) => (
               <button
                 key={cat}
                 className={selectedCategory === cat ? "active" : ""}
@@ -102,9 +110,9 @@ const Destinations = () => {
             />
             <div className="destination-content">
               <h3 className="destination-name">
-                {destination.city}, {destination.country}
+                {destination[`city_${lang}`]}, {destination[`country_${lang}`]}
               </h3>
-              <p className="destination-example">e.g. {destination.description}</p>
+              <p className="destination-example">e.g. {destination[`description_${lang}`]}</p>
             </div>  
             <button className="find-more-button"
                 onClick={(e) =>  {

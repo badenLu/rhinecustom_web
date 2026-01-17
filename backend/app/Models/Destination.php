@@ -16,6 +16,8 @@ class Destination extends Model
         'country',
         'description',
         'image',
-        'category'
+        'category',
+        'attractions',
+        'travelTips'
     ];
 }

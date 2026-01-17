@@ -5,12 +5,14 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './RouteDetailPage.css';
 import { useParams } from 'react-router-dom';
+import {useTranslation} from "react-i18next";
 
 const RouteDetailPage = () => {
   const { id } = useParams();
   const [route, setRoute] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/routes/${id}`)
@@ -61,9 +63,9 @@ const RouteDetailPage = () => {
       <div className="tab-section">
         <Tabs>
           <TabList>
-            <Tab>Overview</Tab>
-            <Tab>Itinerary</Tab>
-            <Tab>Reviews</Tab>
+            <Tab>{t("route-tab-section-title.overview")}</Tab>
+            <Tab>{t("route-tab-section-title.itinerary")}</Tab>
+            <Tab>{t("route-tab-section-title.reviews")}</Tab>
           </TabList>
 
           <TabPanel>

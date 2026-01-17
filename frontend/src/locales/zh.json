@@ -196,6 +196,22 @@
     "wechat": "rhinecustom",
     "legalTitle": "法律与版权信息",
     "copyright": "© 2025 RhineCustom 版权所有"
-  }
+  },
 
+  "route-tab-section-title": {
+    "overview": "概览",
+    "itinerary": "具体日程",
+    "reviews": "评论"
+  },
+
+  "destinations_filter-title": {
+    "popularity": "热度",
+    "category": "分类"
+  },
+
+  "destinations_filter-subtitle": {
+    "culture": "文化之旅",
+    "nature": "自然探索",
+    "gastronomy": "美食发现"
+  }
 }
