@@ -67,7 +67,7 @@ const DestinationDetail = () => {
                 ))}
               </ul>
             ) : (
-              <p>No season details available.</p>
+              <p>{t('general-strings.noSeason')}</p>
             )}
           </div>
         );
@@ -75,22 +75,22 @@ const DestinationDetail = () => {
         return transportation ? (
           <p>{transportation}</p>
         ) : (
-          <p>No transportation info available.</p>
+          <p>{t('general-strings.noTransportation')}</p>
         );
       case 'localCuisine':
         return localCuisine ? (
           <p>{localCuisine}</p>
         ) : (
-          <p>No local cuisine info available.</p>
+          <p>{t('general-strings.noCuisine')}</p>
         );
       case 'additionalTips':
         return additionalTips ? (
           <p>{additionalTips}</p>
         ) : (
-          <p>No additional tips available.</p>
+          <p>{t('general-strings.noExtraTips')}</p>
         );
       default:
-        return <p>Select a category to see details.</p>;
+        return <p>{t('general-strings.selectCategory')}</p>;
     }
   };
 

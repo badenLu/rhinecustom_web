@@ -226,6 +226,12 @@
 
   "general-strings": {
     "bestSeason": "最佳季节",
-    "findMore": "更多"
+    "findMore": "更多",
+    "noSeason": "无时间建议",
+    "noTransportation": "无交通建议",
+    "noCuisine": "无美食建议",
+    "noExtraTips": "无其他建议",
+    "selectCategory": "选择分类",
+    "search": "搜索关键词"
   }
 }

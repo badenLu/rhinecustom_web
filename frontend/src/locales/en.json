@@ -218,6 +218,12 @@
 
   "general-strings": {
     "bestSeason": "Best Season",
-    "findMore": "Find More"
+    "findMore": "Find More",
+    "noSeason": "No season details available.",
+    "noTransportation": "No transportation info available.",
+    "noCuisine": "No local cuisine info available.",
+    "noExtraTips": "No additional tips available.",
+    "selectCategory": "Select a category to see details.",
+    "search": "Search"
   }
 }

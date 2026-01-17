@@ -30,8 +30,8 @@ const Destinations = () => {
       : selectedCategory
       ? destinations.filter(
         (destination) =>
-          destination.category &&
-          destination.category.toLowerCase().includes(selectedCategory.toLowerCase())
+          destination[`category_${lang}`] &&
+          destination[`category_${lang}`].toLowerCase().includes(selectedCategory.toLowerCase())
       )
       :destinations;
  
@@ -54,7 +54,7 @@ const Destinations = () => {
             className={filter === "category" ? "active" : ""}
             onClick={() => {
               setFilter("category");
-              setSelectedCategory("Culture");
+              setSelectedCategory("");
               setShowCategories(true);
             }}
           >
@@ -66,7 +66,7 @@ const Destinations = () => {
         <div className="search-container">
           <input
             type="text"
-            placeholder="Search"
+            placeholder={t('general-strings.search')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="search-input"
@@ -93,11 +93,10 @@ const Destinations = () => {
             ))}
           </div>
         )}
-
       <div className="destination-grid">
         {filteredDestinations.filter((d) => searchQuery ?
-         d.city.toLowerCase().includes(searchQuery.toLocaleLowerCase())
-        || d.country.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase()) : true
+         d[`city_${lang}`].toLowerCase().includes(searchQuery.toLocaleLowerCase())
+        || d[`country_${lang}`].toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase()) : true
       )
         .map((destination) => (
           <div key={destination.id} className="destination-card"
