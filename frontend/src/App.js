@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
@@ -18,7 +18,36 @@ function App() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false); //管理注册模态框状态
   const [user, setUser] = useState(null);
 
-  const openLoginModal = () => {
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            // 从后端获取用户信息
+            fetch("http://127.0.0.1:8000/api/me", {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            })
+                .then(res => {
+                    if (res.ok) {
+                        return res.json();
+                    } else {
+                        // token 无效，清除它
+                        localStorage.removeItem('token');
+                        throw new Error('Invalid token');
+                    }
+                })
+                .then(data => {
+                    setUser(data.user);
+                })
+                .catch(err => {
+                    console.error('Failed to restore user session:', err);
+                    setUser(null);
+                });
+        }
+    }, []); // 只在组件挂载时运行一次
+
+
+    const openLoginModal = () => {
     setIsLoginOpen(true);
     setIsRegisterOpen(false);
   };//打开模态框
@@ -31,13 +60,13 @@ function App() {
   const closeRegisterModal = () => setIsRegisterOpen(false);
 
   const handleLogout = async() => {
-    const token = localStorage.getItem('item');
+    const token = localStorage.getItem('token');
     if(token) {
         await fetch("http://127.0.0.1:8000/api/logout", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authrization": `Bearer ${token}`
+            "Authorization": `Bearer ${token}`
           }
         });
     }

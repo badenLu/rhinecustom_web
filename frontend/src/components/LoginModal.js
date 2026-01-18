@@ -3,6 +3,7 @@ import "./Modal.css";
 import logo from '../assets/images/logo/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import {useTranslation} from "react-i18next";
 
 function LoginModal({ isOpen, onClose, onSwitchToRegister, setUser }) {
 
@@ -10,6 +11,7 @@ function LoginModal({ isOpen, onClose, onSwitchToRegister, setUser }) {
     const [password, setPassword] = useState(""); //backend
     const [passwordVisible, setPasswordVisible ] = useState(false);
     const [error, setError] = useState("") //backend
+    const {t} = useTranslation();
 
     if (!isOpen) return null;
 
@@ -66,31 +68,31 @@ function LoginModal({ isOpen, onClose, onSwitchToRegister, setUser }) {
                 <img src={logo} alt="RhineCustom Logo" className="logo-img"/>
                 <span className="company-name">RhineCustom</span>
             </div>
-          <h2 className="mb-3">Login to start your next trip!</h2>
+          <h2 className="mb-3">{t('login.loginToStart')}</h2>
           {error && <p className="error-message">{error}</p>}
           <form onSubmit={handleLogin}>
             <div className="form-group mb-3 text-start">
-              <label htmlFor="email">Email address</label>
-              <input type="email" id="email" name="email" className="form-control" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+              <label htmlFor="email">{t('login.emailAddress')}</label>
+              <input type="email" id="email" name="email" className="form-control" placeholder={t('login.enterEmailAddress')} value={email} onChange={(e) => setEmail(e.target.value)} required />
             </div>
             <div className="form-group mb-3 text-start">
-              <label htlmFor="password">Password</label>
+              <label htlmFor="password">{t('login.password')}</label>
               <div className="password-input-wrapper">
-                  <input type={passwordVisible ? "text" : "password"} id="password" name="password"  className="form-control" placeholder="Enter your password" 
+                  <input type={passwordVisible ? "text" : "password"} id="password" name="password"  className="form-control" placeholder={t('login.enterPassword')}
                   value={password} onChange={(e) => setPassword(e.target.value)} required />
                   <button type="button" className="password-toggle-btn" onClick={togglePasswordVisibility} aria-label="Toggle password visibility">
                     <FontAwesomeIcon icon={passwordVisible ? faEyeSlash : faEye} className="icon-style"/>
                   </button>
               </div>
-              
+
             </div>
             <button type="submit" className="w-100 mb-3">
-              Log in
+                {t('login.login')}
             </button>
             <div>
-                <p>————— Not a member? —————</p>
-                <p><button type="button" className="btn-link" onClick={onSwitchToRegister}><strong>Join now</strong></button>{" "}
-              and enjoy the best experience with RhineCustom.
+                <p>————— {t('login.notMember')} —————</p>
+                <p><button type="button" className="btn-link" onClick={onSwitchToRegister}><strong>{t('login.joinNow')}</strong></button>{" "}
+                    {t('login.andEnjoy')}
             </p>
             </div>
           </form>

@@ -6,6 +6,7 @@ import 'react-tabs/style/react-tabs.css';
 import './RouteDetailPage.css';
 import { useParams } from 'react-router-dom';
 import {useTranslation} from "react-i18next";
+import i18n from "i18next";
 
 const RouteDetailPage = () => {
   const { id } = useParams();
@@ -13,6 +14,7 @@ const RouteDetailPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const { t } = useTranslation();
+  const lang = i18n.language;
 
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/routes/${id}`)
@@ -42,7 +44,7 @@ const RouteDetailPage = () => {
                 <img src={img} alt={`Sub ${index + 1}`} />
                 {index === 3 && images.length > 5 && (
                   <div className="overlay">
-                    查看全部图片({images.length})
+                    {t('general-strings.seeAllImages')}({images.length})
                   </div>
                 )}
               </div>
@@ -69,18 +71,18 @@ const RouteDetailPage = () => {
           </TabList>
 
           <TabPanel>
-            <h2>行程概述</h2>
-            <div dangerouslySetInnerHTML={{ __html: route.overview }} />
+            <h2>{t('route-details.trip-overview')}</h2>
+            <div dangerouslySetInnerHTML={{ __html: route[`overview_${lang}`] }} />
           </TabPanel>
 
           <TabPanel>
-            <h2>日程安排</h2>
-            <div dangerouslySetInnerHTML={{ __html: route.itinerary }} />
+            <h2>{t('route-details.dailyPlan')}</h2>
+            <div dangerouslySetInnerHTML={{ __html: route[`itinerary_${lang}`] }} />
           </TabPanel>
 
           <TabPanel>
-            <h2>客户评论</h2>
-            <p>暂无评论</p>
+            <h2>{t('route-details.reviews')}</h2>
+            <p>{t('route-details.noReview')}</p>
           </TabPanel>
         </Tabs>
       </div>

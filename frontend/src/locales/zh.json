@@ -1,4 +1,16 @@
 {
+  "general-strings": {
+    "bestSeason": "最佳季节",
+    "findMore": "更多",
+    "noSeason": "无时间建议",
+    "noTransportation": "无交通建议",
+    "noCuisine": "无美食建议",
+    "noExtraTips": "无其他建议",
+    "selectCategory": "选择分类",
+    "search": "搜索关键词",
+    "seeAllImages": "查看全部照片"
+  },
+
   "homepage": {
     "slogan": "您的欧洲旅行定制专家！",
     "searchPlaceholder": "请输入您的目的地",
@@ -224,14 +236,64 @@
     "additionalTips":"其他建议"
   },
 
-  "general-strings": {
-    "bestSeason": "最佳季节",
-    "findMore": "更多",
-    "noSeason": "无时间建议",
-    "noTransportation": "无交通建议",
-    "noCuisine": "无美食建议",
-    "noExtraTips": "无其他建议",
-    "selectCategory": "选择分类",
-    "search": "搜索关键词"
+  "login": {
+    "loginToStart": "开启你的下一次旅程!",
+    "emailAddress": "邮箱",
+    "enterEmailAddress": "请输入邮箱",
+    "password": "密码",
+    "enterPassword": "请输入密码",
+    "login": "登录",
+    "notMember": "还没有加入?",
+    "joinNow": "现在注册",
+    "andEnjoy": "，与莱茵定制共同计划一次精彩旅行！"
+  },
+
+  "register": {
+    "joinUs": "和我们一起计划一次难忘的旅行",
+    "title": "称谓",
+    "selectTitle": "选择称谓",
+    "firstName": "名字",
+    "lastName": "姓氏",
+    "mr": "先生",
+    "ms": "女士",
+    "mx": "其他",
+    "emailAddress": "邮箱",
+    "enterEmailAddress": "请输入邮箱",
+    "password": "密码",
+    "enterPassword": "请输入密码",
+    "confirmPassword": "请确认密码",
+    "marketing": "若您希望收到更多推荐信息，请勾选这里",
+    "alreadyIn": "已经注册了?",
+    "createAccount": "创建账户",
+    "loginHere": "直接登录",
+    "unlock": "，获得更多惊喜。",
+    "passwordHint": "至少10个字符，至少包含一个大写字母，一个小写字母，一个数字，和一个特殊字符。"
+  },
+
+  "personalData": {
+    "personalData": "个人信息",
+    "uploadAvatar": "上传头像:",
+    "title": "称谓:",
+    "lastName": "姓氏:",
+    "firstName": "名字:",
+    "emailReadOnly": "邮箱 (只读):",
+    "marketing": "希望收到推荐信息吗?",
+    "birthday": "生日:",
+    "phone": "电话:",
+    "region": "地点:",
+    "save": "保存"
+  },
+
+  "route-page": {
+    "pageTitle": "热门路线推荐",
+    "mainViews": "主要景点：",
+    "duration": "旅行时长：",
+    "rating": "热门指数："
+  },
+  "route-details": {
+    "trip-overview": "行程概述",
+    "dailyPlan": "日程安排",
+    "reviews": "客户评论",
+    "noReview": "暂无评论"
   }
 }

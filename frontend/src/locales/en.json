@@ -1,4 +1,16 @@
 {
+  "general-strings": {
+    "bestSeason": "Best Season",
+    "findMore": "Find More",
+    "noSeason": "No season details available.",
+    "noTransportation": "No transportation info available.",
+    "noCuisine": "No local cuisine info available.",
+    "noExtraTips": "No additional tips available.",
+    "selectCategory": "Select a category to see details.",
+    "search": "Search",
+    "seeAllImages": "See all photos"
+  },
+
   "homepage": {
     "slogan": "Your expert in customizing European journeys!",
     "searchPlaceholder": "Please enter your destination",
@@ -216,14 +228,65 @@
     "additionalTips":"Additional Tips"
   },
 
-  "general-strings": {
-    "bestSeason": "Best Season",
-    "findMore": "Find More",
-    "noSeason": "No season details available.",
-    "noTransportation": "No transportation info available.",
-    "noCuisine": "No local cuisine info available.",
-    "noExtraTips": "No additional tips available.",
-    "selectCategory": "Select a category to see details.",
-    "search": "Search"
+  "login": {
+    "loginToStart": "Login to start your next trip!",
+    "emailAddress": "Email address",
+    "enterEmailAddress": "Enter your E-mail",
+    "password": "Password",
+    "enterPassword": "Enter your password",
+    "login": "Log in",
+    "notMember": "Not a member?",
+    "joinNow": "Join now",
+    "andEnjoy": " and enjoy the best experience with RhineCustom."
+  },
+
+  "register": {
+    "joinUs": "Join us in crafting your unforgettable European journey!",
+    "title": "Title",
+    "selectTitle": "Select title",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "mr": "Mr.",
+    "ms": "Ms.",
+    "mx": "Mx.",
+    "emailAddress": "Email address",
+    "enterEmailAddress": "Enter your E-mail",
+    "password": "Password",
+    "enterPassword": "Enter your password",
+    "confirmPassword": "Confirm Password",
+    "marketing": "If you would like to receive email marketing from us, please tick here.",
+    "alreadyIn": "Already a member?",
+    "createAccount": "Create an account",
+    "loginHere": "Login here",
+    "unlock": " to unlock the whole surprise here.",
+    "passwordHint": "At least 10 characters, including at least one uppercase letter, one lowercase letter, one number, and one special symbol."
+  },
+
+  "personalData": {
+    "personalData": "Personal Data",
+    "uploadAvatar": "Upload new avatar:",
+    "title": "Title:",
+    "lastName": "Last Name:",
+    "firstName": "First Name:",
+    "emailReadOnly": "Email (read-only):",
+    "marketing": "Receive marketing emails?",
+    "birthday": "Birthday:",
+    "phone": "Phone:",
+    "region": "Region:",
+    "save": "Save"
+  },
+
+  "route-page": {
+    "pageTitle": "Popular routes",
+    "mainViews": "Main views: ",
+    "duration": "Duration: ",
+    "rating": "Stars: "
+  },
+
+  "route-details": {
+    "trip-overview": "Overview",
+    "dailyPlan": "Daily plans",
+    "reviews": "Reviews",
+    "noReview": "No reviews :("
   }
 }

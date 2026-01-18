@@ -23,7 +23,11 @@ class User extends Authenticatable
         'last_name',   // 新增字段
         'email',
         'password',
-        'marketing_emails'
+        'marketing_emails',
+        'birthday',
+        'phone',
+        'region',
+        'avatar',
     ];
 
     /**

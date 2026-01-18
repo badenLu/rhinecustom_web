@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './RoutesPage.css';
 import ImageCarousel from '../components/ImageCarousel';
 import { useNavigate } from 'react-router-dom';
+import {useTranslation} from "react-i18next";
+import i18n from "i18next";
 
 const RoutesPage = () => {
   const [routes, setRoutes] = useState([]);
@@ -17,10 +19,12 @@ const RoutesPage = () => {
   const handleCardClick = (id) => {
     navigate(`/routes/${id}`);
   }
+  const {t} = useTranslation();
+  const lang = i18n.language;
 
   return (
     <div className="routes-container">
-    <h1 className="page-title">热门路线推荐</h1>
+    <h1 className="page-title">{t('route-page.pageTitle')}</h1>
     {routes.map((route) => {
       // 在这里再声明 imageURLs，就能访问到当前 route
       const imageURLs = Array.isArray(route.images)
@@ -34,11 +38,11 @@ const RoutesPage = () => {
           </div>
 
           <div className="route-content" onClick={() => handleCardClick(route.id)}>
-            <h2 className="route-title"><strong>{route.title}</strong></h2>
-            {route.subtitle && <p className="route-subtitle">{route.subtitle}</p>}
-            <p className="short-desc"><strong>主要景点: </strong>{route.shortDesc}</p>
-            <p><strong>旅行时长:</strong> {route.duration}</p>
-            <p><strong>热门指数:</strong> {route.likeCount}</p>
+            <h2 className="route-title"><strong>{route[`title_${lang}`]}</strong></h2>
+            {route[`subtitle_${lang}`] && <p className="route-subtitle">{route[`subtitle_${lang}`]}</p>}
+            <p className="short-desc"><strong>{t('route-page.mainViews')}</strong>{route[`shortDesc_${lang}`]}</p>
+            <p><strong>{t('route-page.duration')}</strong> {route[`duration_${lang}`]}</p>
+            <p><strong>{t('route-page.rating')}</strong> {route.likeCount}</p>
       
           </div>
         </div>
