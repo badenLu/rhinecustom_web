@@ -108,62 +108,62 @@ const Navbar = ({ onLoginClick, user, onLogout }) => { //接收onLoginClick作�
                     </li>
                 </ul>
 
-                <div className="d-flex align-items-center">
-                     {user ? (
-                        <div className="user-menu-container" ref={menuRef}>
-                            {/* 点击头像或文字时展开菜单 */}
-                            <div className="d-flex align-items-center user-info" onClick={toggleMenu}>
-                            <FontAwesomeIcon icon={faUser} className="user-icon me-2" />
-                            <span>{t('navbar.hello')}, {user.first_name}</span>
-                            </div>
-                            {/* 下拉菜单 */}
-                            {isMenuOpen && (
-                            <div className="user-dropdown-menu">
-                              {/* 下拉菜单顶部：头像区域 */}
-                              <div className="dropdown-header text-center">
-                                <div className="avatar-area">
-                                  {user.avatar ? (
-                                    <img src={user.avatar} alt="avatar" className="dropdown-avatar" />
-                                  ) : (
-                                    <img
-                                        src={
-                                            user.title === "mr"
-                                                ? defaultMrAvatar
-                                                : user.title === "ms"
-                                                ? defaultMsAvatar
-                                                : defaultMxAvatar
-                                        }
-                                        alt="default avatar"
-                                        className="dropdown-avatar"
-                                    />
-                                  )}
-                                </div>
-                                <a href="/profile" className="user-name-link">
-                                  <p className="user-name">{user.first_name}&nbsp;&nbsp;{user.last_name}</p>
-                                </a>
-                                <p className="user-email">{user.email}</p>
-                              </div>
-                              {/* 下拉菜单主体：菜单选项 */}
-                              <div className="dropdown-body">
-                                <ul className="list-unstyled">
-                                  <li><a href="/profile" className="dropdown-item">{t('navbar.personalData')}</a></li>
-                                  <li><a href="/activities" className="dropdown-item">{t('navbar.personalActivities')}</a></li>
-                                  <li><a href="/comments" className="dropdown-item">{t('navbar.personalComments')}</a></li>
-                                </ul>
-                              </div>
-                              {/* 下拉菜单底部：退出登录 */}
-                              <div className="dropdown-footer">
-                                <button onClick={handleLogout} className="dropdown-item">{t('navbar.logout')}</button>
-                              </div>
-                            </div>
-                            )}
-                        </div>
-                    ) : (
-                    <button className="me-2" onClick={onLoginClick}>
-                        {t('navbar.login')}
-                    </button>
-                    )}
-                </div>
+                {/*<div className="d-flex align-items-center">*/}
+                {/*     {user ? (*/}
+                {/*        <div className="user-menu-container" ref={menuRef}>*/}
+                {/*            /!* 点击头像或文字时展开菜单 *!/*/}
+                {/*            <div className="d-flex align-items-center user-info" onClick={toggleMenu}>*/}
+                {/*            <FontAwesomeIcon icon={faUser} className="user-icon me-2" />*/}
+                {/*            <span>{t('navbar.hello')}, {user.first_name}</span>*/}
+                {/*            </div>*/}
+                {/*            /!* 下拉菜单 *!/*/}
+                {/*            {isMenuOpen && (*/}
+                {/*            <div className="user-dropdown-menu">*/}
+                {/*              /!* 下拉菜单顶部：头像区域 *!/*/}
+                {/*              <div className="dropdown-header text-center">*/}
+                {/*                <div className="avatar-area">*/}
+                {/*                  {user.avatar ? (*/}
+                {/*                    <img src={user.avatar} alt="avatar" className="dropdown-avatar" />*/}
+                {/*                  ) : (*/}
+                {/*                    <img*/}
+                {/*                        src={*/}
+                {/*                            user.title === "mr"*/}
+                {/*                                ? defaultMrAvatar*/}
+                {/*                                : user.title === "ms"*/}
+                {/*                                ? defaultMsAvatar*/}
+                {/*                                : defaultMxAvatar*/}
+                {/*                        }*/}
+                {/*                        alt="default avatar"*/}
+                {/*                        className="dropdown-avatar"*/}
+                {/*                    />*/}
+                {/*                  )}*/}
+                {/*                </div>*/}
+                {/*                <a href="/profile" className="user-name-link">*/}
+                {/*                  <p className="user-name">{user.first_name}&nbsp;&nbsp;{user.last_name}</p>*/}
+                {/*                </a>*/}
+                {/*                <p className="user-email">{user.email}</p>*/}
+                {/*              </div>*/}
+                {/*              /!* 下拉菜单主体：菜单选项 *!/*/}
+                {/*              <div className="dropdown-body">*/}
+                {/*                <ul className="list-unstyled">*/}
+                {/*                  <li><a href="/profile" className="dropdown-item">{t('navbar.personalData')}</a></li>*/}
+                {/*                  <li><a href="/activities" className="dropdown-item">{t('navbar.personalActivities')}</a></li>*/}
+                {/*                  <li><a href="/comments" className="dropdown-item">{t('navbar.personalComments')}</a></li>*/}
+                {/*                </ul>*/}
+                {/*              </div>*/}
+                {/*              /!* 下拉菜单底部：退出登录 *!/*/}
+                {/*              <div className="dropdown-footer">*/}
+                {/*                <button onClick={handleLogout} className="dropdown-item">{t('navbar.logout')}</button>*/}
+                {/*              </div>*/}
+                {/*            </div>*/}
+                {/*            )}*/}
+                {/*        </div>*/}
+                {/*    ) : (*/}
+                {/*    <button className="me-2" onClick={onLoginClick}>*/}
+                {/*        {t('navbar.login')}*/}
+                {/*    </button>*/}
+                {/*    )}*/}
+                {/*</div>*/}
 
                 <div className="language-selector-container" ref={langMenuRef}>
                     <div 

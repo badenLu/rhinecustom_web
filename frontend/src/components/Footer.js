@@ -24,7 +24,7 @@ const Footer = () => {
 
             <div className="footer-col">
               <h5 className="footer-title">{t("footer.contactUs")}</h5>
-              <p>{t("footer.email")}: contact@rhinecustom.com</p>
+              <p>{t("footer.email")}: chenxrl123@gmail.com</p>
               <p>{t("footer.address")}: Merzhauser Str.164,<br />79100 Freiburg, Germany</p>
               {/* <p>{t("footer.phone")}: +123 456 7890</p> */}
             </div>
