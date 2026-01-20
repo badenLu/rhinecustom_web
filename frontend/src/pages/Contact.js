@@ -155,6 +155,7 @@ const Contact = ({ user }) => {
             <Select
               {...field}
               options={travelTypes}
+              placeholder = {t("contact.select")}
               value={travelTypes.find((option) => option.value === field.value) || null}
               onChange={(selected) => field.onChange(selected.value)}
             />
@@ -173,6 +174,7 @@ const Contact = ({ user }) => {
           render={({ field }) => (
             <Select
               options={destinations}
+              placeholder = {t("contact.select")}
               isMulti
               value={destinations.filter((opt) =>
                 field.value?.includes(opt.value)

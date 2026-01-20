@@ -8,7 +8,8 @@
     "noExtraTips": "无其他建议",
     "selectCategory": "选择分类",
     "search": "搜索关键词",
-    "seeAllImages": "查看全部照片"
+    "seeAllImages": "查看全部照片",
+    "loading": "加载内容中..."
   },
 
   "homepage": {
@@ -113,6 +114,7 @@
     "submitSuccess": "提交成功！5秒后自动返回首页！",
     "submitFail": "提交失败！请稍后再试！",
 
+    "select": "请选择",
     "errorTitleRequired": "请选择您的称呼",
     "errorNameRequired": "请输入您的姓名",
     "errorEmailRequired": "请输入您的邮箱",
@@ -281,7 +283,9 @@
     "birthday": "生日:",
     "phone": "电话:",
     "region": "地点:",
-    "save": "保存"
+    "save": "保存",
+    "successInfo": "个人信息更新成功！",
+    "failureInfo": "个人信息更新失败！"
   },
 
   "route-page": {

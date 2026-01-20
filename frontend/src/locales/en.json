@@ -8,7 +8,8 @@
     "noExtraTips": "No additional tips available.",
     "selectCategory": "Select a category to see details.",
     "search": "Search",
-    "seeAllImages": "See all photos"
+    "seeAllImages": "See all photos",
+    "loading": "Loading..."
   },
 
   "homepage": {
@@ -112,6 +113,8 @@
 
     "submitSuccess": "Submit successfully! After 5 seconds will turn to Homepage!",
     "submitFail": "Submitted unsuccessfully! Please try it later!",
+
+    "select": "Select...",
 
     "errorTitleRequired": "Please select your gender",
     "errorNameRequired": "Please enter your name",
@@ -273,7 +276,9 @@
     "birthday": "Birthday:",
     "phone": "Phone:",
     "region": "Region:",
-    "save": "Save"
+    "save": "Save",
+    "successInfo": "Profile has been updated！",
+    "failureInfo": "Profile could not be updated!"
   },
 
   "route-page": {

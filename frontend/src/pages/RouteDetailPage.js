@@ -23,7 +23,7 @@ const RouteDetailPage = () => {
       .catch(err => console.error(err));
   }, [id]);
 
-  if (!route) return <div>Loading...</div>;
+  if (!route) return <div>{t('general-strings.loading')}</div>;
 
   const images = route.images.map(name => `http://127.0.0.1:8000/images/${name}`);
 
