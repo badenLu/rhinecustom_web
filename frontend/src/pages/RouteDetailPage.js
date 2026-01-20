@@ -17,7 +17,7 @@ const RouteDetailPage = () => {
   const lang = i18n.language;
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/routes/${id}`)
+    fetch(`https://rhinecustom.onrender.com/api/routes/${id}`)
       .then(res => res.json())
       .then(data => setRoute(data))
       .catch(err => console.error(err));
@@ -25,7 +25,7 @@ const RouteDetailPage = () => {
 
   if (!route) return <div>{t('general-strings.loading')}</div>;
 
-  const images = route.images.map(name => `http://127.0.0.1:8000/images/${name}`);
+  const images = route.images.map(name => `https://rhinecustom.onrender.com/images/${name}`);
 
   return (
     <div className="route-detail-page">

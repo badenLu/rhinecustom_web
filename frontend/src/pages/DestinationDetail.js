@@ -14,7 +14,7 @@ const DestinationDetail = () => {
   const {t} = useTranslation();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/destinations/${id}`)
+    fetch(`https://rhinecustom.onrender.com/api/destinations/${id}`)
       .then(res => res.json())
       .then(data => {
         setDestination(data);

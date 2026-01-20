@@ -10,7 +10,7 @@ const RoutesPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-      fetch("http://127.0.0.1:8000/api/routes")
+      fetch("https://rhinecustom.onrender.com/api/routes")
         .then((response) => response.json())
         .then((data) => setRoutes(data))
         .catch((error) => console.error("Error festching destinations:", error));
@@ -28,7 +28,7 @@ const RoutesPage = () => {
     {routes.map((route) => {
       // 在这里再声明 imageURLs，就能访问到当前 route
       const imageURLs = Array.isArray(route.images)
-        ? route.images.map((name) => `http://127.0.0.1:8000/images/${name}`)
+        ? route.images.map((name) => `https://rhinecustom.onrender.com/images/${name}`)
         : [];
 
       return (

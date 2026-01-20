@@ -15,7 +15,7 @@ const Destinations = () => {
   const lang = i18n.language;
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/destinations")
+    fetch("https://rhinecustom.onrender.com/api/destinations")
       .then((response) => response.json())
       .then((data) => {
         setDestinations(data);

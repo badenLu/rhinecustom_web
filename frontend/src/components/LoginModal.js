@@ -25,7 +25,7 @@ function LoginModal({ isOpen, onClose, onSwitchToRegister, setUser }) {
       setError(""); //清空错误信息
       
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/login", {
+        const response = await fetch("https://rhinecustom.onrender.com/api/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
@@ -36,7 +36,7 @@ function LoginModal({ isOpen, onClose, onSwitchToRegister, setUser }) {
             localStorage.setItem("token", data.token); // 存储 Token
             setUser(data.user); // 更新用户状态
             // 获取用户信息
-            const userResponse = await fetch("http://127.0.0.1:8000/api/me", {
+            const userResponse = await fetch("https://rhinecustom.onrender.com/api/me", {
               method: "GET",
               headers: {
                   "Authorization": `Bearer ${data.token}`,

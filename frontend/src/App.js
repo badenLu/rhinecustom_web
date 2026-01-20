@@ -22,7 +22,7 @@ function App() {
         const token = localStorage.getItem('token');
         if (token) {
             // 从后端获取用户信息
-            fetch("http://127.0.0.1:8000/api/me", {
+            fetch("https://rhinecustom.onrender.com/api/me", {
                 headers: {
                     "Authorization": `Bearer ${token}`
                 }
@@ -62,7 +62,7 @@ function App() {
   const handleLogout = async() => {
     const token = localStorage.getItem('token');
     if(token) {
-        await fetch("http://127.0.0.1:8000/api/logout", {
+        await fetch("https://rhinecustom.onrender.com/api/logout", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

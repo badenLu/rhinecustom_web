@@ -28,7 +28,7 @@ function ProfilePage({ user }) {
   /*
   useEffect(() => {
     const token = localStorage.getItem("token");
-    fetch("http://127.0.0.1:8000/api/profile", {
+    fetch("https://rhinecustom.onrender.com/api/profile", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -85,7 +85,7 @@ function ProfilePage({ user }) {
         formDataToSend.append("avatar", avatarFile);
       }
 
-      const response = await fetch("http://127.0.0.1:8000/api/profile/update", {
+      const response = await fetch("https://rhinecustom.onrender.com/api/profile/update", {
         method: "POST", // 或 PUT，看你后端接口定义
         headers: {
           Authorization: `Bearer ${token}`,
@@ -113,7 +113,7 @@ function ProfilePage({ user }) {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await fetch("http://127.0.0.1:8000/api/profile/update", {
+      const response = await fetch("https://rhinecustom.onrender.com/api/profile/update", {
         method: "POST",
         headers: {
           'Authorization': `Bearer ${token}`,
