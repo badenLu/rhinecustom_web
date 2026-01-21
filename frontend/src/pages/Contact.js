@@ -258,7 +258,7 @@ const Contact = ({ user }) => {
       </div>
 
 
-      <button type="submit" className="button w-100">Submit</button>
+      <button type="submit" className="button w-100">{t('general-strings.submit')}</button>
     </form>
   );
 };

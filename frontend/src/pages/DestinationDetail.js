@@ -39,7 +39,7 @@ const DestinationDetail = () => {
   }, [id]);
 
   if (!destination) {
-    return <div className="detail-loading">Loading...</div>;
+    return <div className="detail-loading">{t('general-strings.loading')}</div>;
   }
 
   const {

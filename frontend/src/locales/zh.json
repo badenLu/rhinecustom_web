@@ -9,7 +9,8 @@
     "selectCategory": "选择分类",
     "search": "搜索关键词",
     "seeAllImages": "查看全部照片",
-    "loading": "加载内容中..."
+    "loading": "加载内容中...",
+    "submit": "提交"
   },
 
   "homepage": {

@@ -9,7 +9,8 @@
     "selectCategory": "Select a category to see details.",
     "search": "Search",
     "seeAllImages": "See all photos",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "submit": "Submit"
   },
 
   "homepage": {
