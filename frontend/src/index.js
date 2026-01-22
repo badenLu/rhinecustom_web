@@ -4,6 +4,7 @@ import App from './App'; //导入App组件
 import './index.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './i18n';
+import {HelmetProvider} from "react-helmet-async";
 
 
 
@@ -11,7 +12,9 @@ import './i18n';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App />
+        <HelmetProvider>
+            <App />
+        </HelmetProvider>
     </React.StrictMode>
 );
 

@@ -22,7 +22,7 @@ function App() {
         const token = localStorage.getItem('token');
         if (token) {
             // 从后端获取用户信息
-            fetch("https://rhinecustom.onrender.com/api/me", {
+            fetch(`https://rhinecustom.onrender.com/api/me`, {
                 headers: {
                     "Authorization": `Bearer ${token}`
                 }

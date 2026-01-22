@@ -26,6 +26,7 @@ import image13 from "../assets/images/services/image13.jpg";
 import image14 from "../assets/images/services/image14.jpg";
 import image15 from "../assets/images/services/image15.jpg";
 import image16 from "../assets/images/services/image16.jpg";
+import {Helmet} from "react-helmet-async";
 
 
 const Homepage = () => {
@@ -114,74 +115,81 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div className="container-fluid">
-      <div className="banner-container">
-        <Carousel fade interval={2000}>
-        {bannerImages.map((imgSrc, index) => (
-            <Carousel.Item key={index}>
-              <img
-                className="d-block w-100 banner-img"
-                src={imgSrc}
-                alt={`Banner ${index + 1}`}
-              />
-              <div className="image-caption">
-                {bannerCaptions[index]}
+      <>
+        <Helmet>
+          <title>Rhine Custom - 定制化旅行路线规划</title>
+          <meta name="description" content="欢迎来到 Rhine Custom，我们为您提供专业的定制化旅行路线规划服务" />
+          <link rel="canonical" href="https://www.rhinecustom.com/" />
+        </Helmet>
+        <div className="container-fluid">
+          <div className="banner-container">
+            <Carousel fade interval={2000}>
+              {bannerImages.map((imgSrc, index) => (
+                  <Carousel.Item key={index}>
+                    <img
+                        className="d-block w-100 banner-img"
+                        src={imgSrc}
+                        alt={`Banner ${index + 1}`}
+                    />
+                    <div className="image-caption">
+                      {bannerCaptions[index]}
+                    </div>
+                  </Carousel.Item>
+              ))}
+            </Carousel>
+
+            <div className="banner-overlay">
+              <h1 className="slogan">{t('homepage.slogan')}</h1>
+              <div className="search-container">
+                <div className="search-box">
+                  <input
+                      type="text"
+                      className="search-input"
+                      placeholder={t('homepage.searchPlaceholder')}
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                  <i className="fas fa-search search-icon" onClick={handleSearch}></i>
+                </div>
+                <button
+                    className="customization-button"
+                    onClick={() => navigate("/contact")}
+                >
+                  {t('homepage.customization')}
+                </button>
               </div>
-            </Carousel.Item>
-          ))}
-        </Carousel>
-
-        <div className="banner-overlay">
-          <h1 className="slogan">{t('homepage.slogan')}</h1>
-          <div className="search-container">
-            <div className="search-box">
-              <input
-                type="text"
-                className="search-input"
-                placeholder={t('homepage.searchPlaceholder')}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              <i className="fas fa-search search-icon" onClick={handleSearch}></i> 
             </div>
-            <button
-              className="customization-button"
-              onClick={() => navigate("/contact")}
-            >
-              {t('homepage.customization')}
-            </button>
           </div>
-        </div>
-      </div>
 
-   
-      <div className="services-section">
-        {/* 四个服务板块，每个占整行 */}
-        {services.map((service, index) => (
-          <div className="service-category" key={index}>
-            <h2>{service.title}</h2>
-            <p>{service.description}</p>
-            <div className="service-slider">
-              <button className={`arrow-btn left-arrow hidden`} onClick={() => handleScroll(index, -1)}>
-                &#8592;
-              </button>
-              <div className="service-items-wrapper" ref={(el) => (serviceRefs.current[index] = el)}>
-                {service.items.map((item, idx) => (
-                  <div className="service-item" key={idx} onClick={() => navigate(`/routes/${item.routeId}`)}>
-                    <img src={item.image} alt={item.title}/>
-                    <h4>{item.title}</h4>
+
+          <div className="services-section">
+            {/* 四个服务板块，每个占整行 */}
+            {services.map((service, index) => (
+                <div className="service-category" key={index}>
+                  <h2>{service.title}</h2>
+                  <p>{service.description}</p>
+                  <div className="service-slider">
+                    <button className={`arrow-btn left-arrow hidden`} onClick={() => handleScroll(index, -1)}>
+                      &#8592;
+                    </button>
+                    <div className="service-items-wrapper" ref={(el) => (serviceRefs.current[index] = el)}>
+                      {service.items.map((item, idx) => (
+                          <div className="service-item" key={idx} onClick={() => navigate(`/routes/${item.routeId}`)}>
+                            <img src={item.image} alt={item.title}/>
+                            <h4>{item.title}</h4>
+                          </div>
+                      ))}
+                    </div>
+                    <button className={`arrow-btn right-arrow`} onClick={() => handleScroll(index,1)}>
+                      &#8594;
+                    </button>
                   </div>
-                ))}
-              </div>
-              <button className={`arrow-btn right-arrow`} onClick={() => handleScroll(index,1)}>
-                &#8594;
-              </button>
-            </div>
+                </div>
+            ))}
           </div>
-        ))}
-      </div>
-      
-    </div>
+
+        </div>
+      </>
   );
 };
 

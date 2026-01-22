@@ -38,6 +38,7 @@ import img22 from "../assets/images/lightbox/img22.jpg";
 import img23 from "../assets/images/lightbox/img23.jpg";
 import img24 from "../assets/images/lightbox/img24.jpg";
 import img25 from "../assets/images/lightbox/img25.jpg";
+import {Helmet} from "react-helmet-async";
 
 
 const About = () => {
@@ -89,6 +90,12 @@ const About = () => {
 
   return (
     <>
+      <Helmet>
+        <title>关于我们 - Rhine Custom</title>
+        <meta name="description" content="了解 Rhine Custom 的故事和我们的使命" />
+        <link rel="canonical" href="https://www.rhinecustom.com/about" />
+      </Helmet>
+
       <div className="album-container">
       <RowsPhotoAlbum
         photos={photos}
