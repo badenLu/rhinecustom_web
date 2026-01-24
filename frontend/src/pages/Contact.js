@@ -92,8 +92,6 @@ const Contact = ({ user }) => {
     }
   };
 
-    
-
   return (
     <>
       <Helmet>
@@ -218,9 +216,18 @@ const Contact = ({ user }) => {
         <div className="mb-3">
           <label className="form-label">{t("contact.startDateLabel")}</label>
           <input
-              {...register("startDate", { required: t("contact.errorStartDateRequired") })}
+              {...register("startDate", {
+                required: t("contact.errorStartDateRequired"),
+                validate: (value) => {
+                  const selectedDate = new Date(value);
+                  const afterOneWeek = new Date();
+                  afterOneWeek.setHours(168, 0, 0, 0);
+                  return selectedDate >= afterOneWeek || t('general-string.errorTooEarly');
+                }
+              })}
               type="date"
               className="form-control"
+              min={new Date().toISOString().split('T')[0]}
           />
           {errors.startDate && <p className="alert alert-warning mt-2">{errors.startDate.message}</p>}
         </div>
@@ -229,9 +236,17 @@ const Contact = ({ user }) => {
         <div className="mb-3">
           <label className="form-label">{t("contact.endDateLabel")}</label>
           <input
-              {...register("endDate", { required: t("contact.errorEndDateRequired") })}
+              {...register("endDate", {
+                required: t("contact.errorEndDateRequired"),
+                validate: (value) => {
+                  const startDate = watch("startDate");
+                  if (!startDate) return true;
+                  return new Date(value) > new Date(startDate) || t("contact.errorEndDateMustBeAfterStart")
+                }
+              })}
               type="date"
               className="form-control"
+              min={watch("startDate") || new Date().toISOString.split('T')[0]}
           />
           {errors.endDate && <p className="alert alert-warning mt-2">{errors.endDate.message}</p>}
         </div>

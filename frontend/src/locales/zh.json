@@ -116,6 +116,9 @@
     "submitFail": "提交失败！请稍后再试！",
 
     "select": "请选择",
+
+    "errorEndDateMustBeAfterStart": "结束日期必须晚于开始日期",
+    "errorTooEarly": "The departure date needs to be at least one week later.",
     "errorTitleRequired": "请选择您的称呼",
     "errorNameRequired": "请输入您的姓名",
     "errorEmailRequired": "请输入您的邮箱",

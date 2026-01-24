@@ -117,6 +117,8 @@
 
     "select": "Select...",
 
+    "errorEndDateMustBeAfterStart": "The end date must be later than the start date.",
+    "errorTooEarly": "The departure date needs to be at least one week later.",
     "errorTitleRequired": "Please select your gender",
     "errorNameRequired": "Please enter your name",
     "errorEmailRequired": "Please enter your email",
