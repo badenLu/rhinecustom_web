@@ -117,8 +117,10 @@
 
     "select": "请选择",
 
+    "errorBudgetMin": "很遗憾，预算不足",
+    "errorNumberMinLength": "须至少一位旅客出行",
     "errorEndDateMustBeAfterStart": "结束日期必须晚于开始日期",
-    "errorTooEarly": "The departure date needs to be at least one week later.",
+    "errorTooEarly": "出发时间最早须在三天后",
     "errorTitleRequired": "请选择您的称呼",
     "errorNameRequired": "请输入您的姓名",
     "errorEmailRequired": "请输入您的邮箱",

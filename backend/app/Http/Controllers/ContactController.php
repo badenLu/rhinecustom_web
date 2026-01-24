@@ -11,11 +11,11 @@ class ContactController extends Controller
     {
         // 验证请求参数（可根据需要调整验证规则）
         $validatedData = $request->validate([
-            'gender'           => 'required|string',
+            'title'           => 'required|string',
             'name'             => 'required|string',
             'email'            => 'required|email',
             'travelType'       => 'required|string',
-            'destination'      => 'required|array', 
+            'destination'      => 'required|array',
             'startDate'        => 'required|date',
             'endDate'          => 'required|date',
             'number_of_people' => 'required|integer|min:1',

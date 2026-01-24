@@ -118,7 +118,7 @@
     "select": "Select...",
 
     "errorEndDateMustBeAfterStart": "The end date must be later than the start date.",
-    "errorTooEarly": "The departure date needs to be at least one week later.",
+    "errorTooEarly": "The departure date needs to be at least 3 days later.",
     "errorTitleRequired": "Please select your gender",
     "errorNameRequired": "Please enter your name",
     "errorEmailRequired": "Please enter your email",
@@ -129,6 +129,8 @@
     "errorEndDateRequired": "Please choose the end time of your trip",
     "errorNumberRequired": "Please enter the number of travelers",
     "errorBudgetRequired": "Please enter your budget per person",
+    "errorNumberMinLength": "Please enter at least one guest",
+    "errorBudgetMin": "The budget is not enough :(",
     "travelTypes": [
       {
         "value": "Leisure & Family Trip",

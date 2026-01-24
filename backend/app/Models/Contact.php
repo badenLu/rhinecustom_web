@@ -9,11 +9,11 @@ class Contact extends Model
 {
     use HasFactory;
 
-    protected $table = 'contacts'; 
+    protected $table = 'contacts';
     // 如果你的表名是 contacts (符合Laravel默认规则) 则可不写这一行
 
     protected $fillable = [
-        'gender',
+        'title',
         'name',
         'email',
         'travelType',

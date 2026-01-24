@@ -14,7 +14,13 @@ const Contact = ({ user }) => {
   const getDateString = (daysFromToday = 0) => {
     const date = new Date();
     date.setDate(date.getDate() + daysFromToday);
-    return date.toISOString().split('T')[0];
+
+    // 使用本地时间，避免时区问题
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
   }
 
   const {
@@ -228,7 +234,7 @@ const Contact = ({ user }) => {
                 validate: (value) => {
                   const selectedDate = new Date(value);
                   const afterOneWeek = new Date();
-                  afterOneWeek.setDate(afterOneWeek.getDate() + 3);  // ← 正确：7天后
+                  afterOneWeek.setDate(afterOneWeek.getDate() + 3);
                   afterOneWeek.setHours(0, 0, 0, 0);  // 清除时间部分
                   return selectedDate >= afterOneWeek || t('general-string.errorTooEarly');
                 }
@@ -265,10 +271,16 @@ const Contact = ({ user }) => {
           <input
               {...register("number_of_people", {
                 required: t("contact.errorNumberRequired"),
-                min: 1
+                min: {
+                  value: 1,
+                  message: t("contact.errorNumberMinLength")
+                }
               })}
               type="number"
               className="form-control"
+              min="1"
+              step="1"
+              placeholder="1"
           />
           {errors.number_of_people && <p className="alert alert-warning mt-2">{errors.number_of_people.message}</p>}
         </div>
@@ -276,13 +288,20 @@ const Contact = ({ user }) => {
         {/* Budget */}
         <div className="mb-3">
           <label className="form-label">{t("contact.budgetLabel")}</label>
+          <span className="input-group-text">¥</span>
           <input
               {...register("budget", {
                 required: t("contact.errorBudgetRequired"),
-                min: 0
+                min: {
+                  value: 1,
+                  message: t("contact.errorBudgetMin") || "预算必须大于0"
+                }
               })}
               type="number"
               className="form-control"
+              min="1"              // ← 添加这个，浏览器会阻止输入0或负数
+              step="1"             // ← 只能输入整数（如果允许小数，改成 "0.01"）
+              placeholder="1000"   // ← 占位符提示
           />
           {errors.budget && <p className="alert alert-warning mt-2">{errors.budget.message}</p>}
         </div>
