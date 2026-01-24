@@ -11,6 +11,12 @@ const Contact = ({ user }) => {
   const travelTypes = t("contact.travelTypes", { returnObjects: true }) || [];
   const destinations = t("contact.destinations", { returnObjects: true }) || [];
 
+  const getDateString = (daysFromToday = 0) => {
+    const date = new Date();
+    date.setDate(date.getDate() + daysFromToday);
+    return date.toISOString().split('T')[0];
+  }
+
   const {
     register,
     handleSubmit,
@@ -25,8 +31,8 @@ const Contact = ({ user }) => {
       email: "",
       travelType: "",
       destination: [],
-      startDate: "",
-      endDate: "",
+      startDate: getDateString(3),
+      endDate: getDateString(4),
       number_of_people: "",
       budget: "",
     }
@@ -41,8 +47,8 @@ const Contact = ({ user }) => {
         email: user.email || "",
         travelType: "",
         destination: [],
-        startDate: "",
-        endDate: "",
+        startDate: getDateString(3),
+        endDate: getDateString(4),
         number_of_people: "",
         budget: "",
       });
@@ -107,6 +113,7 @@ const Contact = ({ user }) => {
         )}
         <p className="mb-3">{t("contact.formIntro")}</p>
 
+        {/* Title */}
         <div className="mb-3">
           <label className="form-label">{t("contact.titleLabel")}</label>
           <select
@@ -221,7 +228,8 @@ const Contact = ({ user }) => {
                 validate: (value) => {
                   const selectedDate = new Date(value);
                   const afterOneWeek = new Date();
-                  afterOneWeek.setHours(168, 0, 0, 0);
+                  afterOneWeek.setDate(afterOneWeek.getDate() + 3);  // ← 正确：7天后
+                  afterOneWeek.setHours(0, 0, 0, 0);  // 清除时间部分
                   return selectedDate >= afterOneWeek || t('general-string.errorTooEarly');
                 }
               })}
@@ -246,7 +254,7 @@ const Contact = ({ user }) => {
               })}
               type="date"
               className="form-control"
-              min={watch("startDate") || new Date().toISOString.split('T')[0]}
+              min={watch("startDate") || new Date().toISOString().split('T')[0]}
           />
           {errors.endDate && <p className="alert alert-warning mt-2">{errors.endDate.message}</p>}
         </div>
@@ -278,7 +286,6 @@ const Contact = ({ user }) => {
           />
           {errors.budget && <p className="alert alert-warning mt-2">{errors.budget.message}</p>}
         </div>
-
 
         <button type="submit" className="button w-100">{t('general-strings.submit')}</button>
       </form>
