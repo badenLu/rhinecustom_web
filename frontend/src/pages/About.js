@@ -92,7 +92,7 @@ const About = () => {
     <>
       <Helmet>
         <title>关于我们 - Rhine Custom</title>
-        <meta name="description" content="了解 Rhine Custom 的故事和我们的使命" />
+        <meta name="description" content="了解 Rhine Custom / 莱茵定制 的故事和我们的使命" />
         <link rel="canonical" href="https://www.rhinecustom.com/about" />
       </Helmet>
 

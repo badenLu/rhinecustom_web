@@ -87,7 +87,7 @@ const Contact = ({ user }) => {
       });
 
       if (response.ok) {
-        setSubmitMessage("Submit successfully! After 5 seconds will turn to Homepage!");
+        setSubmitMessage(t("contact.submitSuccess"));
         setSubmitStatus("success");
         reset();
         setOtherDestination("");
@@ -95,11 +95,11 @@ const Contact = ({ user }) => {
           navigate("/");
         }, 5000);
       } else {
-        setSubmitMessage("Submitted unsuccessfully! Please try it later!");
+        setSubmitMessage(t("contact.submitFail"));
         setSubmitStatus("warning");
       }
     } catch(error) {
-      setSubmitMessage("Submitted unsuccessfully! Please try it later!");
+      setSubmitMessage(t("contact.submitFail"));
       setSubmitStatus("warning");
     }
   };
@@ -108,7 +108,7 @@ const Contact = ({ user }) => {
     <>
       <Helmet>
         <title>联系我们 - Rhine Custom</title>
-        <meta name="description" content="联系 Rhine Custom 团队，我们随时为您提供帮助" />
+        <meta name="description" content="联系 Rhine Custom/莱茵定制 团队，我们随时为您提供帮助" />
         <link rel="canonical" href="https://www.rhinecustom.com/contact" />
       </Helmet>
       <form onSubmit={handleSubmit(onSubmit)} className="container p-4">
@@ -299,9 +299,9 @@ const Contact = ({ user }) => {
               })}
               type="number"
               className="form-control"
-              min="1"              // ← 添加这个，浏览器会阻止输入0或负数
-              step="1"             // ← 只能输入整数（如果允许小数，改成 "0.01"）
-              placeholder="1000"   // ← 占位符提示
+              min="1"
+              step="1"
+              placeholder="1000"
           />
           {errors.budget && <p className="alert alert-warning mt-2">{errors.budget.message}</p>}
         </div>

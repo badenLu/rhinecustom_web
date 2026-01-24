@@ -41,7 +41,7 @@ const Destinations = () => {
       <>
           <Helmet>
               <title>目的地列表 - Rhine Custom</title>
-              <meta name="description" content="浏览我们精选的全球旅行目的地，找到您的下一个冒险地点" />
+              <meta name="description" content="浏览莱茵定制精选的全球旅行目的地，找到您的下一个冒险地点" />
               <link rel="canonical" href="https://www.rhinecustom.com/destinations" />
           </Helmet>
           <div className="destination-container">

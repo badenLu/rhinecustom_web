@@ -14,7 +14,7 @@ const RoutesPage = () => {
       fetch("https://rhinecustom.onrender.com/api/routes")
         .then((response) => response.json())
         .then((data) => setRoutes(data))
-        .catch((error) => console.error("Error festching destinations:", error));
+        .catch((error) => console.error("Error fetching destinations:", error));
   }, []);
 
   const handleCardClick = (id) => {
