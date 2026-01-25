@@ -41,7 +41,8 @@ const Contact = ({ user }) => {
       endDate: getDateString(4),
       number_of_people: "",
       budget: "",
-    }
+    },
+    shouldFocusError: true
   });
 
   useEffect(() => {
@@ -76,6 +77,8 @@ const Contact = ({ user }) => {
   };
 
   const onSubmit = async(data) => {
+    scrollToTop();
+
     let filteredDestinations = data.destination.filter((dest) => dest !=="Other");
 
     if (isOtherSelected && otherDestination) {
