@@ -7,6 +7,8 @@ use App\Mail\ContactFormSubmitted;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
+use Exception;
 
 class ContactController extends Controller {
     public function store(Request $request) {
@@ -42,9 +44,9 @@ class ContactController extends Controller {
                 'contact' => $contact
             ], 201);
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             // 记录错误日志
-            \Log::error('Contact form submission error: ' . $e->getMessage());
+            Log::error('Contact form submission error: ' . $e->getMessage());
 
             return response()->json([
                 'message' => 'Failed to process your request',
