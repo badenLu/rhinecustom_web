@@ -133,53 +133,53 @@
     "errorBudgetRequired": "请输入人均预算",
     "travelTypes": [
       {
-        "value": "Leisure & Family Trip",
+        "value": "休闲与家庭旅行",
         "label": "休闲与家庭旅行"
       },
       {
-        "value": "Business & Corporate Travel",
+        "value": "商务与公司差旅",
         "label": "商务与公司差旅"
       },
       {
-        "value": "Educational & Study Tours",
+        "value": "教育与游学之旅",
         "label": "教育与游学之旅"
       },
       {
-        "value": "Medical & Wellness Tourism",
+        "value": "医疗与健康旅游",
         "label": "医疗与健康旅游"
       }
     ],
     "destinations": [
       {
-        "value": "Germany",
+        "value": "德国",
         "label": "德国"
       },
       {
-        "value": "France",
+        "value": "法国",
         "label": "法国"
       },
       {
-        "value": "Switzerland",
+        "value": "瑞士",
         "label": "瑞士"
       },
       {
-        "value": "Italy",
+        "value": "意大利",
         "label": "意大利"
       },
       {
-        "value": "Spain",
+        "value": "西班牙",
         "label": "西班牙"
       },
       {
-        "value": "Netherlands",
+        "value": "荷兰",
         "label": "荷兰"
       },
       {
-        "value": "Austria",
+        "value": "奥地利",
         "label": "奥地利"
       },
       {
-        "value": "Other",
+        "value": "其他",
         "label": "其他"
       }
     ]
