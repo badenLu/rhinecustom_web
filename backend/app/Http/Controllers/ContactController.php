@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 use Exception;
+use function Laravel\Prompts\error;
 
 class ContactController extends Controller {
     public function store(Request $request) {
