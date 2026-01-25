@@ -44,14 +44,15 @@ class ContactController extends Controller {
                 'contact' => $contact
             ], 201);
 
-        } catch (Exception $e) {
-            // 记录错误日志
-            Log::error('Contact form submission error: ' . $e->getMessage());
-
+        } catch (\Exception $e) {
+            // 临时调试：直接返回详细错误信息
             return response()->json([
                 'message' => 'Failed to process your request',
-                'error' => $e->getMessage()
-            ], 500);
+                'error' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString()  // 完整堆栈
+            ], status: 500);
         }
     }
 }
