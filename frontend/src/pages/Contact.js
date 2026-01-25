@@ -11,6 +11,7 @@ const Contact = ({ user }) => {
   const travelTypes = t("contact.travelTypes", { returnObjects: true }) || [];
   const destinations = t("contact.destinations", { returnObjects: true }) || [];
   const formRef = useRef(null);  // 添加 ref
+  const [isLoading, setIsLoading] = useState(false);
 
   const getDateString = (daysFromToday = 0) => {
     const date = new Date();
@@ -78,6 +79,7 @@ const Contact = ({ user }) => {
 
   const onSubmit = async(data) => {
     scrollToTop();
+    setIsLoading(true);
 
     let filteredDestinations = data.destination.filter((dest) => dest !=="Other");
 
@@ -117,6 +119,8 @@ const Contact = ({ user }) => {
       setSubmitMessage(t("contact.submitFail"));
       setSubmitStatus("warning");
       scrollToTop();  // 滚动到顶部
+    } finally {
+      setIsLoading(false);  // 结束加载
     }
   };
 
@@ -127,6 +131,11 @@ const Contact = ({ user }) => {
           <meta name="description" content="联系 Rhine Custom/莱茵定制 团队，我们随时为您提供帮助" />
           <link rel="canonical" href="https://www.rhinecustom.com/contact" />
         </Helmet>
+        {isLoading && (
+            <div className="loading-overlay">
+              <div className="loading-spinner"></div>
+            </div>
+        )}
         <div ref={formRef} className="container p-4">
           {submitMessage && (
               <div className={`alert alert-${submitStatus}`}>
