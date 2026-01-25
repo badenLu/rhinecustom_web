@@ -29,7 +29,7 @@ class ContactFormSubmitted extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Contact Form Submitted',
+            subject: '新的旅行咨询 - ' . $this->contact->name
         );
     }
 
@@ -39,7 +39,7 @@ class ContactFormSubmitted extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.contact-form-submitted'
         );
     }
 
@@ -51,10 +51,5 @@ class ContactFormSubmitted extends Mailable
     public function attachments(): array
     {
         return [];
-    }
-
-    public function build() {
-        return $this->subject('新的旅行咨询 - ' . $this->contact->name)
-            ->view('emails.contact-form-submitted');
     }
 }

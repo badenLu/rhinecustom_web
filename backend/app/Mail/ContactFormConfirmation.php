@@ -29,7 +29,7 @@ class ContactFormConfirmation extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Contact Form Confirmation',
+            subject: '感谢您的咨询 - Rhine Custom'
         );
     }
 
@@ -39,7 +39,7 @@ class ContactFormConfirmation extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.contact-form-confirmation'
         );
     }
 
@@ -51,11 +51,5 @@ class ContactFormConfirmation extends Mailable
     public function attachments(): array
     {
         return [];
-    }
-
-    public function build()
-    {
-        return $this->subject('感谢您的咨询 - Rhine Custom')
-            ->view('emails.contact-form-confirmation');
     }
 }
