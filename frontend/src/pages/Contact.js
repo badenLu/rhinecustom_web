@@ -103,10 +103,6 @@ const Contact = ({ user }) => {
         setSubmitStatus("warning");
       }
     } catch(error) {
-      // 临时调试：打印后端返回的错误详情
-      const errorData = await response.json();
-      console.error('后端错误详情:', errorData);
-
       setSubmitMessage(t("contact.submitFail"));
       setSubmitStatus("warning");
     }
