@@ -2,18 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ContactFormConfirmation;
-use App\Mail\ContactFormSubmitted;
 use App\Models\Contact;
 use Brevo\Client\Api\TransactionalEmailsApi;
 use Brevo\Client\Configuration;
 use Brevo\Client\Model\SendSmtpEmail;
-use GuzzleHttp\Client;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Log;
-use Exception;
-use function Laravel\Prompts\error;
 
 class ContactController extends Controller {
     public function store(Request $request) {
@@ -38,22 +31,32 @@ class ContactController extends Controller {
             // 存储到数据库
             $contact = Contact::create($validatedData);
 
+            // 配置 Brevo API
             $config = Configuration::getDefaultConfiguration()->setApiKey('api-key', env('BREVO_API_KEY'));
-            $apiInstance = new TransactionalEmailsApi(new Client(), $config);
+            $apiInstance = new TransactionalEmailsApi(new \GuzzleHttp\Client(), $config);
 
-            $email = new SendSmtpEmail([
+            // 邮件1：发给管理员
+            $emailToAdmin = new SendSmtpEmail([
                 'sender' => ['email' => 'noreply@rhinecustom.com', 'name' => 'Rhine Custom'],
                 'to' => [['email' => 'contact@rhinecustom.com']],
                 'subject' => '新的旅行咨询 - ' . $contact->name,
                 'htmlContent' => view('emails.contact-form-submitted', ['contact' => $contact])->render()
             ]);
+            $apiInstance->sendTransacEmail($emailToAdmin);
 
-            $apiInstance->sendTransacEmail($email);
+            // 邮件2：发给用户（确认邮件）
+            $emailToUser = new SendSmtpEmail([
+                'sender' => ['email' => 'noreply@rhinecustom.com', 'name' => 'Rhine Custom'],
+                'to' => [['email' => $contact->email]],
+                'subject' => '感谢您的咨询 - Rhine Custom',
+                'htmlContent' => view('emails.contact-form-confirmation', ['contact' => $contact])->render()
+            ]);
+            $apiInstance->sendTransacEmail($emailToUser);
 
             return response()->json([
                 'message' => 'Form data stored successfully!',
                 'contact' => $contact
-            ], 201);
+            ], status: 201);
 
         } catch (\Exception $e) {
             // 临时调试：直接返回详细错误信息
