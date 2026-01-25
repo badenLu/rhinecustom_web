@@ -124,6 +124,7 @@
       <path value="$PROJECT_DIR$/backend/vendor/league/uri" />
       <path value="$PROJECT_DIR$/backend/vendor/league/uri-interfaces" />
       <path value="$PROJECT_DIR$/backend/vendor/laravel/prompts" />
+      <path value="$PROJECT_DIR$/backend/vendor/getbrevo/brevo-php" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

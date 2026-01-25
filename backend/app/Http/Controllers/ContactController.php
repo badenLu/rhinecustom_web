@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Mail\ContactFormConfirmation;
 use App\Mail\ContactFormSubmitted;
 use App\Models\Contact;
+use Brevo\Client\Api\TransactionalEmailsApi;
+use Brevo\Client\Configuration;
+use Brevo\Client\Model\SendSmtpEmail;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
@@ -34,11 +38,17 @@ class ContactController extends Controller {
             // 存储到数据库
             $contact = Contact::create($validatedData);
 
-            // 发送邮件给管理员
-            Mail::to('contact@rhinecustom.com')->send(new ContactFormSubmitted($contact));
+            $config = Configuration::getDefaultConfiguration()->setApiKey('api-key', env('BREVO_API_KEY'));
+            $apiInstance = new TransactionalEmailsApi(new Client(), $config);
 
-            // 发送确认邮件给用户
-            Mail::to($contact->email)->send(new ContactFormConfirmation($contact));
+            $email = new SendSmtpEmail([
+                'sender' => ['email' => 'noreply@rhinecustom.com', 'name' => 'Rhine Custom'],
+                'to' => [['email' => 'contact@rhinecustom.com']],
+                'subject' => '新的旅行咨询 - ' . $contact->name,
+                'htmlContent' => view('emails.contact-form-submitted', ['contact' => $contact])->render()
+            ]);
+
+            $apiInstance->sendTransacEmail($email);
 
             return response()->json([
                 'message' => 'Form data stored successfully!',
