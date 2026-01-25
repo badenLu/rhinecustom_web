@@ -72,55 +72,55 @@
 
     <div class="info-row">
         <span class="label">姓名：</span>
-        <span class="value">{{ $contact => name }}</span>
+        <span class="value">{{ $contact->name }}</span>
     </div>
 
     <div class="info-row">
         <span class="label">邮箱：</span>
-        <span class="value">{{ $contact=>email }}</span>
+        <span class="value">{{ $contact->email }}</span>
     </div>
 
     <h2 style="margin-top: 30px;">旅行详情</h2>
 
     <div class="info-row">
         <span class="label">旅行类型：</span>
-        <span class="value">{{ $contact=>travelType }}</span>
+        <span class="value">{{ $contact->travelType }}</span>
     </div>
 
     <div class="info-row">
         <span class="label">目的地：</span>
         <span class="value">
                 @if(is_array(json_decode($contact->destination)))
-                    {{ implode(', ', json_decode($contact=>destination)) }}
+                    {{ implode(', ', json_decode($contact->destination)) }}
                 @else
-                    {{ $contact=>destination }}
+                    {{ $contact->destination }}
                 @endif
             </span>
     </div>
 
     <div class="info-row">
         <span class="label">出发日期：</span>
-        <span class="value">{{ $contact=>startDate }}</span>
+        <span class="value">{{ $contact->startDate }}</span>
     </div>
 
     <div class="info-row">
         <span class="label">返回日期：</span>
-        <span class="value">{{ $contact=>endDate }}</span>
+        <span class="value">{{ $contact->endDate }}</span>
     </div>
 
     <div class="info-row">
         <span class="label">出行人数：</span>
-        <span class="value">{{ $contact=>number_of_people }} 人</span>
+        <span class="value">{{ $contact->number_of_people }} 人</span>
     </div>
 
     <div class="info-row">
         <span class="label">预算：</span>
-        <span class="value">¥{{ number_format($contact=>budget, 0, '.', ',') }} 人民币</span>
+        <span class="value">¥{{ number_format($contact->budget, 0, '.', ',') }} 人民币</span>
     </div>
 
     <div class="info-row">
         <span class="label">提交时间：</span>
-        <span class="value">{{ $contact=>created_at=>format('Y-m-d H:i:s') }}</span>
+        <span class="value">{{ $contact->created_at->format('Y-m-d H:i:s') }}</span>
     </div>
 </div>
 

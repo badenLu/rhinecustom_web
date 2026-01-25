@@ -87,7 +87,7 @@
 
 <div class="content">
     <p class="greeting">
-        尊敬的 {{ $contact=>name }}
+        尊敬的 {{ $contact->name }}
         @if($contact->title == 'mr') 先生
         @elseif($contact->title == 'ms') 女士
         @endif，您好！
@@ -102,33 +102,33 @@
 
         <div class="summary-item">
             <span class="label">旅行类型：</span>
-            <span>{{ $contact=>travelType }}</span>
+            <span>{{ $contact->travelType }}</span>
         </div>
 
         <div class="summary-item">
             <span class="label">目的地：</span>
             <span>
                     @if(is_array(json_decode($contact->destination)))
-                        {{ implode(', ', json_decode($contact=>destination)) }}
+                        {{ implode(', ', json_decode($contact->destination)) }}
                     @else
-                        {{ $contact=>destination }}
+                        {{ $contact->destination }}
                     @endif
                 </span>
         </div>
 
         <div class="summary-item">
             <span class="label">旅行日期：</span>
-            <span>{{ $contact=>startDate }} 至 {{ $contact=>endDate }}</span>
+            <span>{{ $contact->startDate }} 至 {{ $contact->endDate }}</span>
         </div>
 
         <div class="summary-item">
             <span class="label">出行人数：</span>
-            <span>{{ $contact=>number_of_people }} 人</span>
+            <span>{{ $contact->number_of_people }} 人</span>
         </div>
 
         <div class="summary-item">
             <span class="label">预算：</span>
-            <span>¥{{ number_format($contact=>budget, 0, '.', ',') }}</span>
+            <span>¥{{ number_format($contact->budget, 0, '.', ',') }}</span>
         </div>
     </div>
 
