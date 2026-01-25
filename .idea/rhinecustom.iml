@@ -122,6 +122,8 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php84" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/polyfill-php85" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/getbrevo/brevo-php" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/storage/app" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/storage/framework" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

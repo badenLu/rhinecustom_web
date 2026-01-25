@@ -29,12 +29,12 @@
             margin: 15px 0;
             padding: 10px;
             background: white;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #58a935;
             border-radius: 4px;
         }
         .label {
             font-weight: bold;
-            color: #667eea;
+            color: #58a935;
             display: inline-block;
             width: 120px;
         }

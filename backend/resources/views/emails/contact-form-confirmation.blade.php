@@ -14,7 +14,7 @@
             padding: 20px;
         }
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4a9d5b 0%, #2d6e3c 100%);
             color: white;
             padding: 40px;
             text-align: center;
@@ -32,7 +32,7 @@
         }
         .greeting {
             font-size: 18px;
-            color: #667eea;
+            color: #58a935;
             margin-bottom: 20px;
         }
         .summary {
@@ -57,7 +57,7 @@
         }
         .cta-button {
             display: inline-block;
-            background: #667eea;
+            background: #58a935;
             color: white;
             padding: 12px 30px;
             text-decoration: none;
@@ -75,7 +75,7 @@
         .contact-info {
             margin-top: 20px;
             padding-top: 20px;
-            border-top: 2px solid #667eea;
+            border-top: 2px solid #58a935;
         }
     </style>
 </head>
@@ -98,7 +98,7 @@
     <p>我们的旅行顾问团队将在 <strong>24小时内</strong>通过邮件与您联系，为您提供专业的旅行建议和定制方案。</p>
 
     <div class="summary">
-        <h3 style="margin-top: 0; color: #667eea;">您的咨询信息</h3>
+        <h3 style="margin-top: 0; color: #58a935;">您的咨询信息</h3>
 
         <div class="summary-item">
             <span class="label">旅行类型：</span>
@@ -134,9 +134,9 @@
 
     <p>在此期间，您也可以：</p>
     <ul>
-        <li>浏览我们的<a href="https://www.rhinecustom.com/destinations" style="color: #667eea;">热门目的地</a></li>
-        <li>查看<a href="https://www.rhinecustom.com/about" style="color: #667eea;">客户评价</a></li>
-        <li>了解我们的<a href="https://www.rhinecustom.com" style="color: #667eea;">服务流程</a></li>
+        <li>浏览我们的<a href="https://www.rhinecustom.com/destinations" style="color: #58a935;">热门目的地</a></li>
+        <li>查看<a href="https://www.rhinecustom.com/about" style="color: #58a935;">客户评价</a></li>
+        <li>了解我们的<a href="https://www.rhinecustom.com" style="color: #58a935;">服务流程</a></li>
     </ul>
 
     <div style="text-align: center;">
@@ -144,7 +144,7 @@
     </div>
 
     <div class="contact-info">
-        <h4 style="color: #667eea; margin-bottom: 10px;">联系我们</h4>
+        <h4 style="color: #58a935; margin-bottom: 10px;">联系我们</h4>
         <p style="margin: 5px 0;">📧 邮箱：contact@rhinecustom.com</p>
         <p style="margin: 5px 0;">📍 地址：Merzhauser Str.164, 79100 Freiburg, Germany</p>
         <p style="margin: 5px 0;">🌐 网站：www.rhinecustom.com</p>
