@@ -1,11 +1,21 @@
 .carousel-container {
   position: relative;
-  width: 300px; /* 您可以根据需要改为100%或别的固定值 */
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .carousel-image-wrapper {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .carousel-image {

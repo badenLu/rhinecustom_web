@@ -76,22 +76,32 @@
   width: 100%;
 }
 
-
 .route-subtitle {
   font-size: 1rem;
   color: #666;
   margin-bottom: 10px;
 }
 
-/* 响应式示例：小屏幕时上下结构 */
 @media (max-width: 768px) {
+  .routes-container {
+    padding: 10px;
+  }
+
   .route-card {
     flex-direction: column;
-    height: auto;
   }
 
   .route-image-container {
     width: 100%;
-    height: auto; 
+    min-width: 100%;
+    height: 220px;
+  }
+
+  .route-content {
+    padding: 15px;
+  }
+
+  .route-title {
+    font-size: 1.1rem;
   }
 }
