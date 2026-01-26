@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
-import "./Navbar.css";
-import logo from '../assets/images/logo/logo.png';
+import "../css/Navbar.css";
+import logo from '../../assets/images/logo/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFire, faUser, faGlobe, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation  } from "react-i18next";
 
 // 导入默认头像图片
-import defaultMrAvatar from '../assets/images/avatar/default_mr.png';
-import defaultMsAvatar from '../assets/images/avatar/default_ms.png';
-import defaultMxAvatar from '../assets/images/avatar/default_mx.png';
+import defaultMrAvatar from '../../assets/images/avatar/default_mr.png';
+import defaultMsAvatar from '../../assets/images/avatar/default_ms.png';
+import defaultMxAvatar from '../../assets/images/avatar/default_mx.png';
 
 const Navbar = ({ onLoginClick, user, onLogout }) => {
     const { t, i18n } = useTranslation();
@@ -79,7 +79,7 @@ const Navbar = ({ onLoginClick, user, onLogout }) => {
             <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container-fluid">
                     {/* Logo */}
-                    <a className="navbar-brand" href="/">
+                    <a className="navbar-brand" href="/frontend/public">
                         <div className="logo-container">
                             <img src={logo} alt="RhineCustom Logo" className="logo-img"/>
                             <span className="company-name">RhineCustom</span>

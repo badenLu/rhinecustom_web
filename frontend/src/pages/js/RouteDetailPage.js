@@ -3,12 +3,13 @@ import Lightbox from 'yet-another-react-lightbox';
 import "yet-another-react-lightbox/styles.css";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import './RouteDetailPage.css';
+import '../css/RouteDetailPage.css';
 import { useParams } from 'react-router-dom';
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {Helmet} from "react-helmet-async";
-import API_URL from "../config";
+import API_URL from "../../config";
+import LoadingEffect from "../../components/js/LoadingEffect";
 
 const RouteDetailPage = () => {
   const { id } = useParams();
@@ -25,7 +26,9 @@ const RouteDetailPage = () => {
       .catch(err => console.error(err));
   }, [id]);
 
-  if (!route) return <div>{t('general-strings.loading')}</div>;
+  if (!route) {
+    return <LoadingEffect text={t('general-strings.loading')} />;
+  }
 
   const images = route.images.map(name => `${API_URL}/images/${name}`);
 

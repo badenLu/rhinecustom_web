@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./Modal.css";
-import logo from '../assets/images/logo/logo.png';
+import "../css/Modal.css";
+import logo from '../../assets/images/logo/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import {useTranslation} from "react-i18next";
-import API_URL from "../config";
+import API_URL from "../../config";
 
 function RegisterModal({ isOpen, onClose, onSwitchToLogin }) {
    

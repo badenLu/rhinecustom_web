@@ -1,8 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import "./Footer.css";
-import logo from "../assets/images/logo/logo.png";
+import "../css/Footer.css";
+import logo from "../../assets/images/logo/logo.png";
 import {SiXiaohongshu, SiTiktok, SiWechat} from 'react-icons/si'
 
 const Footer = () => {

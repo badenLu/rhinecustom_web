@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "./Destinations.css";
+import "../css/Destinations.css";
 import { useNavigate } from 'react-router-dom';
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {Helmet} from "react-helmet-async";
-import API_URL from "../config";
+import API_URL from "../../config";
+import LoadingEffect from "../../components/js/LoadingEffect";
 
 const Destinations = () => {
   const [destinations, setDestinations] = useState([]);
@@ -24,6 +25,10 @@ const Destinations = () => {
       })
       .catch((error) => console.error("Error festching destinations:", error));
   }, []);
+
+  if (!destinations) {
+      return <LoadingEffect text={t('general-strings.loading')} />;
+  }
 
   // 处理筛选逻辑
   const filteredDestinations =

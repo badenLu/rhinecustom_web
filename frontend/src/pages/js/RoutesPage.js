@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './RoutesPage.css';
-import ImageCarousel from '../components/ImageCarousel';
+import '../css/RoutesPage.css';
+import ImageCarousel from '../../components/js/ImageCarousel';
 import { useNavigate } from 'react-router-dom';
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {Helmet} from "react-helmet-async";
-import API_URL from "../config";
+import API_URL from "../../config";
+import LoadingEffect from "../../components/js/LoadingEffect";
 
 const RoutesPage = () => {
   const [routes, setRoutes] = useState([]);
@@ -17,6 +18,10 @@ const RoutesPage = () => {
         .then((data) => setRoutes(data))
         .catch((error) => console.error("Error fetching destinations:", error));
   }, []);
+
+  if (!routes) {
+      return <LoadingEffect text={t('general-strings.loading')} />;
+  }
 
   const handleCardClick = (id) => {
     navigate(`/routes/${id}`);

@@ -1,31 +1,31 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Carousel } from "react-bootstrap"; 
 import { useNavigate } from "react-router-dom";
-import "./Homepage.css"; 
+import "../css/Homepage.css";
 import { useTranslation } from "react-i18next";
 
-import banner1 from "../assets/images/banner/banner1.jpg";
-import banner2 from "../assets/images/banner/banner2.jpg";
-import banner3 from "../assets/images/banner/banner3.jpg";
-import banner4 from "../assets/images/banner/banner4.jpg";
-import banner5 from "../assets/images/banner/banner5.jpg";
+import banner1 from "../../assets/images/banner/banner1.jpg";
+import banner2 from "../../assets/images/banner/banner2.jpg";
+import banner3 from "../../assets/images/banner/banner3.jpg";
+import banner4 from "../../assets/images/banner/banner4.jpg";
+import banner5 from "../../assets/images/banner/banner5.jpg";
 
-import image1 from "../assets/images/services/image1.jpg";
-import image2 from "../assets/images/services/image2.jpg";
-import image3 from "../assets/images/services/image3.jpg";
-import image4 from "../assets/images/services/image4.jpg";
-import image5 from "../assets/images/services/image5.jpg";
-import image6 from "../assets/images/services/image6.jpg";
-import image7 from "../assets/images/services/image7.jpg";
-import image8 from "../assets/images/services/image8.jpg";
-import image9 from "../assets/images/services/image9.jpg";
-import image10 from "../assets/images/services/image10.jpg";
-import image11 from "../assets/images/services/image11.jpg";
-import image12 from "../assets/images/services/image12.jpg";
-import image13 from "../assets/images/services/image13.jpg";
-import image14 from "../assets/images/services/image14.jpg";
-import image15 from "../assets/images/services/image15.jpg";
-import image16 from "../assets/images/services/image16.jpg";
+import image1 from "../../assets/images/services/image1.jpg";
+import image2 from "../../assets/images/services/image2.jpg";
+import image3 from "../../assets/images/services/image3.jpg";
+import image4 from "../../assets/images/services/image4.jpg";
+import image5 from "../../assets/images/services/image5.jpg";
+import image6 from "../../assets/images/services/image6.jpg";
+import image7 from "../../assets/images/services/image7.jpg";
+import image8 from "../../assets/images/services/image8.jpg";
+import image9 from "../../assets/images/services/image9.jpg";
+import image10 from "../../assets/images/services/image10.jpg";
+import image11 from "../../assets/images/services/image11.jpg";
+import image12 from "../../assets/images/services/image12.jpg";
+import image13 from "../../assets/images/services/image13.jpg";
+import image14 from "../../assets/images/services/image14.jpg";
+import image15 from "../../assets/images/services/image15.jpg";
+import image16 from "../../assets/images/services/image16.jpg";
 import {Helmet} from "react-helmet-async";
 
 

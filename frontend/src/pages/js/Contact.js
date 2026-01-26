@@ -3,9 +3,9 @@ import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import { useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import "./Contact.css";
+import "../css/Contact.css";
 import {Helmet} from "react-helmet-async";
-import API_URL from "../config";
+import API_URL from "../../config";
 
 const Contact = ({ user }) => {
   const { t } = useTranslation();

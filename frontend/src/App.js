@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Homepage from './pages/Homepage';
-import Destinations from './pages/Destinations';
-import DestinationDetail from './pages/DestinationDetail';
-import RoutesPage from './pages/RoutesPage';
-import RouteDetailPage from './pages/RouteDetailPage';
-import Contact from './pages/Contact';
-import About from './pages/About';
-import Footer from './components/Footer';
-import LoginModal from './components/LoginModal';
-import RegisterModal from './components/RegisterModal';
-import ProfilePage from './components/ProfilePage';
+import Navbar from './components/js/Navbar';
+import Homepage from './pages/js/Homepage';
+import Destinations from './pages/js/Destinations';
+import DestinationDetail from './pages/js/DestinationDetail';
+import RoutesPage from './pages/js/RoutesPage';
+import RouteDetailPage from './pages/js/RouteDetailPage';
+import Contact from './pages/js/Contact';
+import About from './pages/js/About';
+import Footer from './components/js/Footer';
+import LoginModal from './components/js/LoginModal';
+import RegisterModal from './components/js/RegisterModal';
+import ProfilePage from './components/js/ProfilePage';
 import API_URL from "./config";
 
 function App() {

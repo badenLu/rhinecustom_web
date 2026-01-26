@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import defaultAvatar from "../assets/images/avatar/default_mr.png"; 
-import "./ProfilePage.css";
+import defaultAvatar from "../../assets/images/avatar/default_mr.png";
+import "../css/ProfilePage.css";
 import {useTranslation} from "react-i18next";
-import API_URL from "../config";
+import API_URL from "../../config";
 
 function ProfilePage({ user }) {
   // 如果 user 是从父组件传进来的，就先用它初始化编辑表单

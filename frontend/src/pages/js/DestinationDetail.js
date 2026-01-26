@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-import "./DestinationDetail.css";
+import "../css/DestinationDetail.css";
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {Helmet} from "react-helmet-async";
-import API_URL from "../config";
+import API_URL from "../../config";
+import LoadingEffect from "../../components/js/LoadingEffect";
 
 const DestinationDetail = () => {
   const { id } = useParams();
@@ -41,7 +42,7 @@ const DestinationDetail = () => {
   }, [id]);
 
   if (!destination) {
-    return <div className="detail-loading">{t('general-strings.loading')}</div>;
+    return <LoadingEffect text={t('general-strings.loading')} />;
   }
 
   const {
