@@ -11,6 +11,7 @@ import LoadingEffect from "../../components/js/LoadingEffect";
 const RoutesPage = () => {
   const [routes, setRoutes] = useState([]);
   const navigate = useNavigate();
+  const {t} = useTranslation();
 
   useEffect(() => {
       fetch(`${API_URL}/api/routes`)
@@ -26,7 +27,7 @@ const RoutesPage = () => {
   const handleCardClick = (id) => {
     navigate(`/routes/${id}`);
   }
-  const {t} = useTranslation();
+
   const lang = i18n.language;
 
   return (
