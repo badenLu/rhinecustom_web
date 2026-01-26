@@ -237,4 +237,211 @@
   }
 }
 
+/* ========== 移动端搜索栏优化 ========== */
 
+/* 小屏幕优化 (平板) */
+@media (max-width: 992px) {
+  .banner-container {
+    height: 350px;
+  }
+
+  .banner-img {
+    height: 350px;
+  }
+
+  .slogan {
+    font-size: 2rem;
+    top: 30px;
+    padding: 0 20px;
+  }
+
+  .banner-container .search-container {
+    flex-direction: column;
+    gap: 12px;
+    bottom: 30px;
+    width: 70%; /* 缩短到70% */
+    max-width: 450px; /* 限制最大宽度 */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .banner-container .search-box {
+    width: 100%;
+  }
+
+  .banner-container .search-input {
+    width: 100%;
+    padding: 12px 40px 12px 12px;
+    font-size: 1rem;
+  }
+
+  .banner-container .search-icon {
+    right: 10px;
+    padding: 12px;
+  }
+
+  .customization-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  /* 地点文字调整 - 标题和搜索栏之间 */
+  .image-caption {
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: auto;
+    top: 50%; /* 垂直居中位置 */
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%); /* 完全居中 */
+    padding: 6px 15px;
+    background-color: rgba(0, 0, 0, 0.85); /* 增加不透明度 */
+    border-radius: 6px;
+    white-space: nowrap;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 5; /* 确保在上层 */
+  }
+}
+
+/* 手机屏幕优化 */
+@media (max-width: 768px) {
+  .banner-container {
+    height: 320px;
+    border-radius: 15px;
+  }
+
+  .banner-img {
+    height: 320px;
+    border-radius: 15px;
+  }
+
+  .slogan {
+    font-size: 1.6rem;
+    top: 25px;
+    padding: 0 15px;
+    line-height: 1.3;
+  }
+
+  .banner-container .search-container {
+    bottom: 25px;
+    gap: 10px;
+    width: 65%; /* 进一步缩短 */
+    max-width: 400px;
+  }
+
+  .banner-container .search-input {
+    padding: 11px 40px 11px 11px;
+    font-size: 0.95rem;
+  }
+
+  .customization-button {
+    padding: 11px;
+    font-size: 0.95rem;
+  }
+
+  /* 地点文字 - 标题和搜索栏之间 */
+  .image-caption {
+    font-size: 0.85rem;
+    top: 48%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    padding: 5px 12px;
+    background-color: rgba(0, 0, 0, 0.85);
+    max-width: 75%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 5px;
+  }
+}
+
+/* 小手机屏幕 */
+@media (max-width: 576px) {
+  .banner-container {
+    height: 300px;
+    border-radius: 12px;
+  }
+
+  .banner-img {
+    height: 300px;
+    border-radius: 12px;
+  }
+
+  .slogan {
+    font-size: 1.4rem;
+    top: 20px;
+    padding: 0 10px;
+  }
+
+  .banner-container .search-container {
+    bottom: 20px;
+    gap: 10px;
+    width: 60%; /* 保持合适的宽度 */
+    max-width: 350px;
+  }
+
+  .banner-container .search-input {
+    padding: 10px 38px 10px 10px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .banner-container .search-icon {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .customization-button {
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  /* 地点文字 - 标题和搜索栏之间 */
+  .image-caption {
+    font-size: 0.8rem;
+    top: 45%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    padding: 4px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    max-width: 70%;
+    border-radius: 4px;
+  }
+}
+
+/* 超小手机屏幕 */
+@media (max-width: 400px) {
+  .slogan {
+    font-size: 1.2rem;
+  }
+
+  .banner-container .search-container {
+    width: 75%; /* 稍微放宽一点 */
+  }
+
+  .banner-container .search-input {
+    font-size: 0.85rem;
+  }
+
+  .customization-button {
+    font-size: 0.85rem;
+  }
+
+  .image-caption {
+    font-size: 0.75rem;
+    top: 43%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    padding: 3px 8px;
+    background-color: rgba(0, 0, 0, 0.85);
+    max-width: 65%;
+    border-radius: 4px;
+  }
+}
