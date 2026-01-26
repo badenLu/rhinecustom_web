@@ -5,13 +5,14 @@ import { useNavigate } from 'react-router-dom';
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {Helmet} from "react-helmet-async";
+import API_URL from "../config";
 
 const RoutesPage = () => {
   const [routes, setRoutes] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-      fetch("https://rhinecustom.onrender.com/api/routes")
+      fetch(`${API_URL}/api/routes`)
         .then((response) => response.json())
         .then((data) => setRoutes(data))
         .catch((error) => console.error("Error fetching destinations:", error));
@@ -35,7 +36,7 @@ const RoutesPage = () => {
           {routes.map((route) => {
             // 在这里再声明 imageURLs，就能访问到当前 route
             const imageURLs = Array.isArray(route.images)
-                ? route.images.map((name) => `https://rhinecustom.onrender.com/images/${name}`)
+                ? route.images.map((name) => `${API_URL}/images/${name}`)
                 : [];
 
             return (

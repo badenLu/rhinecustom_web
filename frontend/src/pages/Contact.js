@@ -5,6 +5,7 @@ import { useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./Contact.css";
 import {Helmet} from "react-helmet-async";
+import API_URL from "../config";
 
 const Contact = ({ user }) => {
   const { t } = useTranslation();
@@ -89,7 +90,7 @@ const Contact = ({ user }) => {
     data.destination = filteredDestinations;
 
     try {
-      const response = await fetch("https://rhinecustom.onrender.com/api/contact", {
+      const response = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

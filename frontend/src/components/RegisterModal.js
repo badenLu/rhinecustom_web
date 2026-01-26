@@ -4,6 +4,7 @@ import logo from '../assets/images/logo/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import {useTranslation} from "react-i18next";
+import API_URL from "../config";
 
 function RegisterModal({ isOpen, onClose, onSwitchToLogin }) {
    
@@ -54,7 +55,7 @@ function RegisterModal({ isOpen, onClose, onSwitchToLogin }) {
       setAlert({ message: "", type: "" });
 
       try {
-          const response = await fetch("https://rhinecustom.onrender.com/api/register", {
+          const response = await fetch(`${API_URL}/api/register`, {
               method: "POST",
               headers: { 
                 "Content-Type": "application/json",

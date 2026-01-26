@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import defaultAvatar from "../assets/images/avatar/default_mr.png"; 
 import "./ProfilePage.css";
 import {useTranslation} from "react-i18next";
+import API_URL from "../config";
 
 function ProfilePage({ user }) {
   // 如果 user 是从父组件传进来的，就先用它初始化编辑表单
@@ -28,7 +29,7 @@ function ProfilePage({ user }) {
   /*
   useEffect(() => {
     const token = localStorage.getItem("token");
-    fetch("https://rhinecustom.onrender.com/api/profile", {
+    fetch(`${API_URL}/api/profile`"`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -85,7 +86,7 @@ function ProfilePage({ user }) {
         formDataToSend.append("avatar", avatarFile);
       }
 
-      const response = await fetch("https://rhinecustom.onrender.com/api/profile/update", {
+      const response = await fetch(`"`${API_URL}/api/profile/update`"`, {
         method: "POST", // 或 PUT，看你后端接口定义
         headers: {
           Authorization: `Bearer ${token}`,
@@ -113,7 +114,7 @@ function ProfilePage({ user }) {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await fetch("https://rhinecustom.onrender.com/api/profile/update", {
+      const response = await fetch(`${API_URL}/api/profile/update`, {
         method: "POST",
         headers: {
           'Authorization': `Bearer ${token}`,

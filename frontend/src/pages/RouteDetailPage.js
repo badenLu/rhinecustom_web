@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {Helmet} from "react-helmet-async";
+import API_URL from "../config";
 
 const RouteDetailPage = () => {
   const { id } = useParams();
@@ -18,7 +19,7 @@ const RouteDetailPage = () => {
   const lang = i18n.language;
 
   useEffect(() => {
-    fetch(`https://rhinecustom.onrender.com/api/routes/${id}`)
+    fetch(`${API_URL}/api/routes/${id}`)
       .then(res => res.json())
       .then(data => setRoute(data))
       .catch(err => console.error(err));
@@ -26,7 +27,7 @@ const RouteDetailPage = () => {
 
   if (!route) return <div>{t('general-strings.loading')}</div>;
 
-  const images = route.images.map(name => `https://rhinecustom.onrender.com/images/${name}`);
+  const images = route.images.map(name => `${API_URL}/images/${name}`);
 
   const routesNames = {
     '1': '法国瑞士意大利',

@@ -4,6 +4,7 @@ import "./DestinationDetail.css";
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {Helmet} from "react-helmet-async";
+import API_URL from "../config";
 
 const DestinationDetail = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const DestinationDetail = () => {
   const {t} = useTranslation();
 
   useEffect(() => {
-    fetch(`https://rhinecustom.onrender.com/api/destinations/${id}`)
+    fetch(`${API_URL}/api/destinations/${id}`)
       .then(res => res.json())
       .then(data => {
         setDestination(data);

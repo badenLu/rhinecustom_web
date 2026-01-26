@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import {Helmet} from "react-helmet-async";
+import API_URL from "../config";
 
 const Destinations = () => {
   const [destinations, setDestinations] = useState([]);
@@ -16,7 +17,7 @@ const Destinations = () => {
   const lang = i18n.language;
 
   useEffect(() => {
-    fetch("https://rhinecustom.onrender.com/api/destinations")
+    fetch(`${API_URL}/api/destinations`)
       .then((response) => response.json())
       .then((data) => {
         setDestinations(data);

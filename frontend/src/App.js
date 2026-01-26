@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import LoginModal from './components/LoginModal';
 import RegisterModal from './components/RegisterModal';
 import ProfilePage from './components/ProfilePage';
+import API_URL from "./config";
 
 function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false); //管理登录模态框状态
@@ -22,7 +23,7 @@ function App() {
         const token = localStorage.getItem('token');
         if (token) {
             // 从后端获取用户信息
-            fetch(`https://rhinecustom.onrender.com/api/me`, {
+            fetch(`${API_URL}/api/me`, {
                 headers: {
                     "Authorization": `Bearer ${token}`
                 }
@@ -62,7 +63,7 @@ function App() {
   const handleLogout = async() => {
     const token = localStorage.getItem('token');
     if(token) {
-        await fetch("https://rhinecustom.onrender.com/api/logout", {
+        await fetch(`${API_URL}/api/logout`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
