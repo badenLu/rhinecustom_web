@@ -85,3 +85,199 @@
   vertical-align: middle;
   font-size: 1.5em;
 }
+
+/* ========== Footer 移动端响应式优化 ========== */
+
+/* 平板及以下屏幕 */
+@media (max-width: 992px) {
+  .footer-wrapper {
+    padding: 30px 20px;
+  }
+
+  .footer-columns {
+    flex-direction: column; /* 改为纵向排列 */
+    gap: 25px;
+  }
+
+  .footer-col {
+    text-align: left; /* 左对齐 */
+    width: 100%;
+    padding-left: 15px; /* 左侧留白 */
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+
+  .footer-col p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .footer-link {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    padding: 4px 0;
+  }
+
+  /* 社交图标和文字左对齐 */
+  .footer-col p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 左对齐 */
+    gap: 10px;
+  }
+
+  .social-icon {
+    font-size: 1.8em;
+  }
+
+  /* Legal 部分 - 左对齐 */
+  .footer-legal {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: left; /* 左对齐 */
+    align-items: flex-start; /* 左对齐 */
+  }
+
+  .footer-logo {
+    max-width: 100px;
+    margin-bottom: 15px;
+  }
+
+  .footer-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    text-align: left; /* 左对齐 */
+  }
+}
+
+/* 手机屏幕 */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    padding: 25px 15px;
+  }
+
+  .footer-columns {
+    gap: 20px;
+  }
+
+  .footer-col {
+    padding-left: 10px; /* 减少左侧留白 */
+  }
+
+  .footer-title {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-col p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+
+  .social-icon {
+    font-size: 1.6em;
+  }
+
+  .footer-logo {
+    max-width: 90px;
+  }
+
+  .footer-subtitle {
+    font-size: 0.8rem;
+  }
+
+  /* 地址换行优化 */
+  .footer-col br {
+    display: inline; /* 保持换行 */
+  }
+}
+
+/* 小手机屏幕 */
+@media (max-width: 576px) {
+  .footer-wrapper {
+    padding: 20px 10px;
+  }
+
+  .footer-columns {
+    gap: 20px;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-col p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .footer-link {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+
+  .social-icon {
+    font-size: 1.5em;
+    margin-right: 6px;
+  }
+
+  .footer-legal {
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+
+  .footer-logo {
+    max-width: 80px;
+    margin-bottom: 12px;
+  }
+
+  .footer-subtitle {
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+    padding: 0 10px;
+  }
+}
+
+/* 超小手机屏幕 */
+@media (max-width: 400px) {
+  .footer-wrapper {
+    padding: 15px 8px;
+  }
+
+  .footer-title {
+    font-size: 0.95rem;
+  }
+
+  .footer-col p {
+    font-size: 0.8rem;
+  }
+
+  .footer-link {
+    font-size: 0.8rem;
+  }
+
+  .social-icon {
+    font-size: 1.4em;
+  }
+
+  .footer-logo {
+    max-width: 70px;
+  }
+
+  .footer-subtitle {
+    font-size: 0.7rem;
+  }
+}
