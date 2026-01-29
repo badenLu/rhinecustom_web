@@ -79,7 +79,7 @@ const Navbar = ({ onLoginClick, user, onLogout }) => {
             <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container-fluid">
                     {/* Logo */}
-                    <a className="navbar-brand" href="/frontend/public">
+                    <a className="navbar-brand" href="/">
                         <div className="logo-container">
                             <img src={logo} alt="RhineCustom Logo" className="logo-img"/>
                             <span className="company-name">RhineCustom</span>
