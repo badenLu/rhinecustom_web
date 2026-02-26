@@ -67,7 +67,7 @@ const Homepage = () => {
     };
   })
  
- //控制两个button
+ //control two buttons
   const serviceRefs = useRef([]); // 滚动容器引用，用数组存储多个service-category的ref
   // 滚动处理逻辑
   const handleScroll = (index, direction) => {
