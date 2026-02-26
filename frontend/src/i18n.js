@@ -10,7 +10,7 @@ i18n.use(initReactI18next).init({
     en: { translation: en },
     zh: { translation: zh },
   },
-  lng: 'zh',
+  lng: navigator.language.startsWith('zh') ? 'zh' : 'en',
   fallbackLng: 'en',
   interpolation: { escapeValue: false },
 });

@@ -117,7 +117,7 @@ const Homepage = () => {
   return (
       <>
         <Helmet>
-          <title>Rhine Custom - 定制旅行路线规划</title>
+          <title>{t('homepage.title')}</title>
           <meta name="description" content="欢迎来到 Rhine Custom / 莱茵定制，我们为您提供专业的定制化旅行路线规划服务" />
           <link rel="canonical" href="https://www.rhinecustom.com/" />
         </Helmet>
